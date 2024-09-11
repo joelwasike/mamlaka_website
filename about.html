@@ -1,0 +1,896 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Mamlaka Hub & Spoke</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="logo.jpeg">
+
+    <!-- BOOTSTRAP -->
+
+    <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- end bootstrap -->
+
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- bxslider css -->
+    <!--flaticon css -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/video-js.css" rel="stylesheet">
+
+    
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+.icon-wrapper {
+    display: inline-block;
+}
+
+.hover-icon {
+    fill: #e1e1e1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+    padding: 8px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hover-icon:hover {
+    background-color: #150c1a;
+    cursor: pointer;
+    transform: rotate(15deg);
+}
+
+
+#partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow: hidden;
+    max-height: 200px; /* Adjust based on your layout */
+    transition: max-height 0.3s ease;
+}
+
+#partner-list.expanded {
+    max-height: none;
+}
+
+.show-more {
+    background: transparent;
+    border: none;
+    color: #007bff; /* Adjust based on your design */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.show-more i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.show-more.rotate i {
+    transform: rotate(180deg);
+}
+
+    </style>
+    <style>
+        .network-area {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.network-details {
+    position: relative;
+    padding: 50px 0;
+}
+
+.network-heading h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.network-flow {
+    position: relative;
+    margin-top: 30px;
+}
+
+.flow-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.flow-steps .step {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.flow-steps .step-content {
+    width: 45%;
+    text-align: left;
+    background-color: #301934; /* Semi-transparent background */
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+.flow-steps .step.left-step .step-content {
+    margin-left: auto;
+}
+
+.flow-steps .step.right-step .step-content {
+    margin-right: auto;
+}
+
+.flow-steps:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #fff 50%, transparent) repeat-y;
+    background-size: 0 20px;
+    z-index: 1;
+}
+
+.flow-steps .step:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.app-download-buttons {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.app-button img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+.explore-button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #0088cc;
+}
+
+    </style>
+
+<!-- HEADER STYLE -->
+    <style>
+
+/* Navbar styles */
+/* .gc_main_menu_wrapper {
+  background-color: rgb(249, 250, 251);
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-area img {
+  width: 50%;
+}
+
+.menu-area .nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-area .nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu-area .nav a {
+  color: black !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.menu-area .nav a:hover {
+  color: #0056b3;
+} */
+
+/* Dropdown menu */
+.  .navbar-toggler {
+    z-index: 1050;
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1040;
+    display: none;
+  }
+
+  .navbar-collapse.show + .mobile-overlay {
+    display: block;
+  }
+
+  .navbar-collapse.show {
+    justify-content: flex-end !important; /* Align items to the right */
+  }
+
+  .navbar-toggler:focus, .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-custom {
+    background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+  }
+
+  .btn-custom:hover {
+    background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #5f0f40;
+  }
+
+  .container-fluid.px-4 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .collapse.navbar-collapse {
+    padding-right: 0 !important;
+  }
+
+    </style>
+    <!-- END HEADER STYLE -->
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:" id="return-to-top" style="background-color: #150c1a;"><i class="fa fa-angle-up" ></i></a>
+    <!-- preloader Start -->
+    <!-- <div id="preloader">
+        <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+        </div>
+    </div> -->
+<!-- Header area start here -->
+
+<!-- Header area start here -->
+<style>
+
+.section-title {
+            color: #150c1a !important;
+        }
+
+        .sub-title {
+            color: #150c1a !important;
+
+        }
+
+        .text {
+            color: #150c1a !important;
+
+        }
+
+    .navbar-toggler {
+      z-index: 1050;
+    }
+  
+    .mobile-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1040;
+      display: none;
+    }
+  
+    .navbar-collapse.show + .mobile-overlay {
+      display: block;
+    }
+  
+    .navbar-toggler:focus, .navbar-toggler:active {
+      outline: none;
+      box-shadow: none;
+    }
+  
+    .btn-custom {
+      background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+      border-radius: 30px;
+      padding: 0.5rem 1rem;
+    }
+  
+    .btn-custom:hover {
+      background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+    }
+  
+    .navbar-nav .nav-item .nav-link {
+      font-weight: 600;
+      margin-left: 20px;
+      transition: color 0.3s ease;
+    }
+  
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #5f0f40;
+    }
+  
+    /* Hide Contact Us button on devices smaller than 768px */
+  @media (max-width: 767px) {
+    .btn-custom {
+      display: none;
+    }
+  }
+  </style>
+      </style>
+      <!-- END HEADER STYLE -->
+      <!-- responsive css -->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- modernizr css -->
+      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  
+  <body>
+      <a href="javascript:" id="return-to-top" style="background-color: #150c1a;"><i class="fa fa-angle-up" ></i></a>
+      <!-- preloader Start -->
+      <!-- <div id="preloader">
+          <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+          </div>
+      </div> -->
+  <!-- Header area start here -->
+  <div class=" bg-light">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <!-- Logo Area -->
+          <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+            <div class="logo-area">
+              <a href="index.html">
+                <img src="images/logo/logo2.png" alt="logo" class="img-fluid" style="width: 50%;" />
+              </a>
+            </div>
+          </div>
+          <!-- Menu Area -->
+          <div class="col-lg-9 col-md-9 col-sm-8 col-6">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                  style="right: 0 !important;"
+                  >
+                  <span class="menu-text" style="font-size: 1rem;">&nbsp;  Menu</span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto" style="right: 0 !important;">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="solutions.html">Solutions</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Resources</a>
+                      <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                        <a class="dropdown-item" href="blogs.html">Blogs & Events</a>
+                        <a class="dropdown-item" href="testimonials.html">Testimonials</a>
+                        <a class="dropdown-item" href="partners.html">Partners</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Company</a>
+                      <div class="dropdown-menu" aria-labelledby="companyDropdown">
+                        <a class="dropdown-item" href="about.html">About Us</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="network.html">Network</a>
+                    </li>
+                  </ul>
+                </div>
+                <li class="nav-item" style="list-style-type: none;">
+                  <a href="contact.html" class="btn btn-custom text-white" style="bottom: 0 !important;">
+                    <i class="fa fa-user"></i><span> Contact Us</span>
+                  </a>
+                </li>
+              </nav>
+            </div>
+            
+        </div>
+      </div>
+  </div>
+    <!-- Header area end here -->
+        <section class="team-area pd-t100 pd-b50" style="background-color: #c1c1c1;width: 100%;">
+            <div id="particles-team">
+                <div class="container-fluid">
+                    <div class="container" style="width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px;">
+                        <div class="section"
+                            style=" padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);width: 100% !important;">
+                            <h1 class="section-title"
+                                style="text-align: center; font-size: 2.5em; margin-bottom: 20px; color: #ccc; text-transform: uppercase; font-weight: 700;">
+                                About Us</h1>
+                            <p class="text">MHS is building a comprehensive global payment network designed to enhance
+                                payment
+                                experiences. By integrating seamlessly with MHS' APIs, businesses and customers can
+                                enjoy instant, cross-border transactions.
+
+                            </p>
+                            <p class="text">
+                                MHS is building a comprehensive global payment network designed to enhance payment
+                                experiences. By integrating seamlessly with MHS' APIs, businesses and customers can
+                                enjoy instant, cross-border transactions.
+
+                                MHS has crafted a compelling value proposition that combines commercial viability with
+                                significant impact, setting it apart in the industry. The platform is poised for growth,
+                                leveraging affordable capital to deliver cutting-edge supply chain finance solutions.
+                            </p>
+                            <p class="text">
+
+                                Unlike traditional banks that can draw on their own funds, emerging supply chain
+                                technology companies like MHS, focused on empowering small-scale agricultural players,
+                                often face challenges in securing competitively priced and structured investment
+                                capital.
+
+                            </p>
+
+                            <h2 class="wow fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp; 
+                                background: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+                                -webkit-background-clip: text; 
+                                -webkit-text-fill-color: transparent;text-transform: uppercase;">
+                                Corporate Culture
+                                </h1>
+                                <div class="section-content" style="margin-bottom: 30px;">
+                                    <h3 class="sub-title"
+                                        style="font-size: 1.2em; color: #ccc; margin-top: 30px; margin-bottom: 15px; text-transform: uppercase; border-left: 4px solid #773697; padding-left: 10px;">
+                                        Our Mission
+                                    </h3>
+                                    <p class="text"
+                                        style="font-size: 1.1em; color: #555; line-height: 1.8; margin-bottom: 15px;">
+                                        To Build Africa's largest Trans-Africa Trade and Financial Network.
+                                    </p>
+                                </div>
+                                <div class="section-content" style="margin-bottom: 30px;">
+                                    <h3 class="sub-title"
+                                        style="font-size: 1.2em; color: #ccc; margin-top: 30px; margin-bottom: 15px; text-transform: uppercase; border-left: 4px solid #773697; padding-left: 10px;">
+                                        Core Values
+                                    </h3>
+                                    <p class="text"
+                                        style="font-size: 1.1em; color: #555; line-height: 1.8; margin-bottom: 15px;">
+                                        Building a continental economy ecosystem driven by digital financial centrics
+                                        for
+                                        the informal cross-border trader, enabling real-time settlements and
+                                        correspondence
+                                        services for pure core clients seamlessly.
+                                    </p>
+                                    <p class="text"
+                                        style="font-size: 1.1em; color: #555; line-height: 1.8; margin-bottom: 15px;">
+                                        Our ability to develop an attractive and proven value proposition, with
+                                        potential
+                                        for commercial and impactful returns, is a first in the market. The exchange is
+                                        now
+                                        poised to scale, and scaling relies heavily on access to affordable capital to
+                                        provide innovative supply chain finance solutions.
+                                    </p>
+                                    <p class="text"
+                                        style="font-size: 1.1em; color: #555; line-height: 1.8; margin-bottom: 0;">
+                                        While incumbents such as traditional commercial banks can easily draw from their
+                                        own
+                                        balance sheets, new supply chain trade techs like MHS, working to serve small
+                                        actors
+                                        in the agricultural supply chain, often have limited access to appropriately
+                                        priced
+                                        and structured investment capital.
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="section-heading2">
+                                <h2 class="wow fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp; 
+                                background: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+                                -webkit-background-clip: text; 
+                                -webkit-text-fill-color: transparent;">
+                                    Meet the Directors
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow  fadeInUp animated"
+                            data-wow-duration="1.3s"
+                            style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;margin-top: 120px;">
+                            <div class="team-list">
+                                <div class="conte" style="height: auto;">
+                                    <div class="dbox">
+                                        <div class="dleft">
+                                            <img src="images/team/njiko.jpeg" alt="" style="height: 100px;" />
+                                        </div>
+                                        <div class="dright">
+                                            <div class="content">
+                                                <h3>MS. Njoki Muthoni </h3>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="con ">
+                                        <p>Ms. Muthuuri is Co-Founder and Managing Partner at Mamlaka Kenya since 2015, with
+                                            over 15 years in SME Development Finance and Technical Capacity Building. Before Mamlaka,
+                                            she led a telecom infrastructure firm in South Africa and served as Corporate Finance Director
+                                            at Mamlaka South Africa. She successfully raised USD 40 million for iBurst and USD 70 million
+                                            for Farmers World Malawi’s agriculture facility. Additionally, she secured USD 90 million for SME
+                                            on-lending in Kenya for CBA Bank.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow  fadeInUp animated"
+                            data-wow-duration="1.6s"
+                            style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;margin-top: 120px;">
+                            <div class="team-list">
+                                <div class="conte">
+                                    <div class="dbox">
+                                        <div class="dleft">
+                                            <img src="images/team/Njunge.jpeg" alt="" style="height: 100px;" />
+                                        </div>
+                                        <div class="dright">
+                                            <div class="content">
+                                                <h3>Mr. Mungai Njunge</h3>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="con p-2" style="height: auto;">
+                                        <p>Mungai brings extensive experience in debt funding for the MSME market and is the
+                                            founder of Mould Capital, which provides working capital to micro and small enterprises
+                                            excluded by traditional banks. This sector, though high-risk, greatly impacts the real economy.
+                                            Before shifting to lending, Mungai led a successful software company delivering IT efficiencies
+                                            to corporates across East Africa.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 wow  fadeInUp animated"
+                            data-wow-duration="1.9s"
+                            style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;height: 700px;margin-top: 120px;">
+                            <div class="team-list">
+                                <div class="conte">
+                                    <div class="dbox">
+                                        <div class="dleft">
+                                            <img src="images/team/Thomas.jpeg" alt="" style="height: 100px;" />
+                                        </div>
+                                        <div class="dright">
+                                            <div class="content">
+                                                <h3>Mr. Thomas Abilla
+                                                </h3>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="co p-3">
+                                        <p>Thomas has over 13 years of corporate finance experience, including his role as Vice
+                                            President at Citigroup’s Corporate and Investment Banking Division in New York. He managed
+                                            global revenues of $3.5 billion and focused on strategic planning and joint ventures with foreign
+                                            financial institutions. Additionally, he is the founding partner at AEPLLC, specializing in mining
+                                            and energy investments in Africa.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="background-color: #e1e1e1; color: #150c1a; padding: 40px 20px;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <div class="row">
+                    <!-- Subscribe Section -->
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <h4 style="color: #150c1a; margin-bottom: 20px;">Subscribe to Our Newsletter</h4>
+                        <div class="card p-3" id="subscribe-message" style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;"></div>
+                        <br>
+                        <form id="subscribe-form" action="https://owilly.pythonanywhere.com/api/blog/subscriptions/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                            <input type="email" name="email" placeholder="Enter your email" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none; background-color: #301934; color: #ffffff;">
+                            <button type="submit" style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                        </form>
+                    </div>
+        
+                    <!-- Contact Us Section -->
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <h4 style="color: #150c1a; margin-bottom: 20px;">Contact Us</h4>
+                        <div id="contact-message" class="card p-3" style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;"></div>
+                        <br>
+                        <form id="contact-form" action="https://owilly.pythonanywhere.com/api/blog/contact-us/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                            <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;">
+                            <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: 2px solid #301934;background-color: #301934;color: #ffffff;">
+                            <textarea name="message" placeholder="Your Message" rows="4" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;"></textarea>
+                            <button type="submit" style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;width: 150px;align-items: right;">Send Message</button>
+                        </form>
+
+                    </div>
+                    <div class="col-md-4">
+                        <h4 style="color: #150c1a; margin-bottom: 20px;">Loction and Address</h4>
+
+                        <div class=" wow  fadeIn animated"
+                        data-wow-duration="1.5s"
+                        style="background-color: transparent;color: #150c1a;">
+                        <div class="team2-are btc_right_contt"
+                            style="background-color: transparent;color: #150c1a;">
+                            <div class="team-list"
+                                style="background-color: transparent;color: #150c1a;">
+                                <div class="btc_cot_list_main_wrapper"
+                                    style="background-color: transparent;color: #150c1a;">
+                                    <div class="btc_cott_list_inner_wrapper"
+                                        style="background-color: transparent;color: #150c1a;">
+                                        <div class="btc_contt_icon_wrapper"
+                                            style="background-color: transparent;color: #150c1a;">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="btc_contt_icon_cont_wrapper"
+                                            style="background-color: transparent;color: #150c1a;">
+                                            <p style="color: #150c1a;">Wu-Yi Plaza, Galana Road, Kilimani, Nairobi,
+                                                Kenya.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2" >
+                                        <div class="btc_contt_icon_wrapper" style="color: #150c1a;">
+                                            <i class="fa fa-phone" style="color: #150c1a;"></i>
+                                        </div>
+                                        <div class="btc_contt_icon_cont_wrapper" style="color: #150c1a;">
+                                            <p style="color: #150c1a;">+254 103 102 336</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2">
+                                        <div class="btc_contt_icon_wrapper">
+                                            <i class="fa fa-envelope" style="color: #150c1a;"></i>
+                                        </div>
+                                        <div class="btc_contt_icon_cont_wrapper">
+                                            <p ><a style="color: #150c1a;"
+                                                    href="mailto:hello@mam-laka.com">hello@mam-laka.com</a>
+                                            </p>
+                                            <p style="color: #150c1a;">Monday - Friday 08:00 - 18:00</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <footer class="foo-bot" style="background-color: #150c1a;">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="copyright wow fadeInUp animated" data-wow-duration="1.9s"
+                                style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                                <p style="text-transform: capitalize;">© Copyright Mam-laka Hub & Spoke.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="fadeInUp animated icon-container"
+                                style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp; display: flex; justify-content: center; align-items: center; gap: 10px;">
+
+                                <a href="https://ke.linkedin.com/company/mamlaka-hub-and-spoke">
+                                    <div class="icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                            class="hover-icon">
+                                            <path
+                                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.72 0 54.36A53.79 53.79 0 01107.57 0C137.27 0 160 24.38 160 53.74c0 29.36-22.73 54.36-53.79 54.36zm394.51 339.9h-92.81V302.4c0-34.7-13.45-58.42-46.94-58.42-25.59 0-40.82 17.22-47.55 33.82-2.45 5.98-3.08 14.38-3.08 22.77v147.4H166.41s1.24-239.31 0-264.1h92.82v37.43c-1.2 1.94-2.86 3.82-4.01 5.74h4.01V184.7c12.35-19.06 34.4-46.29 83.54-46.29 60.95 0 106.59 39.83 106.59 125.39v184.2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </a>
+
+                                <a href="https://x.com/TheAbojani">
+                                    <div class="icon-wrapper">
+                                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                                            class="hover-icon">
+                                            <path
+                                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <a href="https://web.facebook.com/profile.php?id=61550738654440">
+                                    <div class="icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                                            class="hover-icon">
+                                            <path
+                                                d="M279.14 288l14.22-92.66h-88.91V142.18c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S257.26 0 225.36 0C141.09 0 89.47 54.02 89.47 144.97v50.37H0v92.66h89.47V512h107.1V288z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="foo-link wow fadeInUp animated" data-wow-duration="1.0s"
+                                style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li><a style="text-transform: capitalize;" href="terms_and_coditions.html"
+                                            style="color: #e1e1e1;">Terms of Use</a></li>
+                                    <li><a style="text-transform: capitalize;" href="privacy_policy.html"
+                                            style="color: #e1e1e1;">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!--Footer area end here-->
+    <!-- all js here -->
+    <!-- jquery latest version -->
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <!-- tether js -->
+    <script src="js/tether.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- owl.carousel js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- meanmenu js -->
+    <script src="js/jquery.meanmenu.js"></script>
+    <!-- jquery-ui js -->
+    <script src="js/jquery-ui.min.js"></script>
+    <!-- easypiechart js -->
+    <script src="js/jquery.easypiechart.min.js"></script>
+    <!-- particles js -->
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <!-- smooth-scroll js -->
+    <script src="js/smooth-scroll.min.js"></script>
+    <!-- plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- EChartJS JavaScript -->
+    <script src="js/echarts-en.min.js"></script>
+    <script src="js/echarts-liquidfill.min.js"></script>
+    <script src="js/vc_round_chart.min.js"></script>
+    <script src="js/videojs-ie8.min.js"></script>
+    <script src="js/video.js"></script>
+    <script src="js/Youtube.min.js"></script>
+    <!-- main js -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Function to handle form submission
+        function handleFormSubmission(formId, messageDivId, successMessage, errorMessage) {
+            document.getElementById(formId).addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+                const form = e.target;
+                const formData = new FormData(form);
+                const messageDiv = document.getElementById(messageDivId);
+    
+                fetch(form.action, {
+                    method: 'POST',
+                    body: JSON.stringify(Object.fromEntries(formData)),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display message from backend or custom success message
+                    if (data.status === 'success') {
+                        messageDiv.textContent = successMessage;
+                        messageDiv.style.color = 'green';
+                    } else {
+                        messageDiv.textContent = data.message || errorMessage;
+                        messageDiv.style.color = 'red';
+                    }
+                    messageDiv.style.display = 'block';
+                    form.reset(); // Clear the form
+                })
+                .catch(() => {
+                    // Display generic error message
+                    messageDiv.textContent = errorMessage;
+                    messageDiv.style.color = 'red';
+                    messageDiv.style.display = 'block';
+                });
+            });
+        }
+    
+        // Handle subscription form submission
+        handleFormSubmission(
+            'subscribe-form', 
+            'subscribe-message', 
+            'Subscription successful! Thank you for subscribing.', 
+            'There was an error subscribing. Please try again.'
+        );
+    
+        // Handle contact form submission
+        handleFormSubmission(
+            'contact-form', 
+            'contact-message', 
+            'Message sent successfully! We will get back to you soon.', 
+            'There was an error sending your message. Please try again.'
+        );
+    </script>
+    
+
+
+</body>
+
+</html>

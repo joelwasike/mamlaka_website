@@ -1,0 +1,2157 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Mamlaka Hub & Spoke</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="logo.jpeg">
+
+    <!-- BOOTSTRAP -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flaticon/1.0.0/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- end bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- bxslider css -->
+    <!--flaticon css -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/video-js.css" rel="stylesheet">
+
+
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .icon-wrapper {
+            display: inline-block;
+        }
+
+        .hover-icon {
+            fill: #e1e1e1;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e1e1e1;
+            padding: 8px;
+            background-color: transparent;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hover-icon:hover {
+            background-color: #150c1a;
+            cursor: pointer;
+            transform: rotate(15deg);
+        }
+
+
+        #partner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            overflow: hidden;
+            max-height: 200px;
+            /* Adjust based on your layout */
+            transition: max-height 0.3s ease;
+        }
+
+        #partner-list.expanded {
+            max-height: none;
+        }
+
+        .show-more {
+            background: transparent;
+            border: none;
+            color: #007bff;
+            /* Adjust based on your design */
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .show-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .show-more.rotate i {
+            transform: rotate(180deg);
+        }
+    </style>
+    <style>
+        .section-with-bg {
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/bg/mhs-2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            /* Text color for readability */
+        }
+
+
+        .section-with-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent overlay */
+            z-index: 1;
+        }
+
+        .section-with-bg .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            /* Adjust padding as needed */
+        }
+
+        .network-area {
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .network-details {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .network-flow {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .flow-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .flow-steps .step {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .flow-steps .step-content {
+            background-color: #301934;
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .separator {
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(180deg, transparent, #fff 50%, transparent) repeat-y;
+            background-size: 0 20px;
+        }
+
+        .app-download-buttons {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .app-button img {
+            width: 150px;
+            margin: 0 10px;
+        }
+
+        /* .testimonial-section {
+    background-color: #f8f9fa;
+}
+
+.testimonial-card {
+    border: none;
+    border-radius: 10px;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+} */
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .card.testimonial-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 10px;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+            border: none;
+            position: relative;
+            height: auto;
+            padding-bottom: 50px;
+        }
+
+        .card.testimonial-card .content {
+            margin-bottom: 60px;
+
+        }
+
+        .card.testimonial-card .client-name {
+            font-size: 1.2em;
+            color: #e1e1e1;
+            margin-top: 10px;
+            margin-bottom: 0;
+            margin: 20px;
+            margin-left: -20px !important;
+
+        }
+
+        .card.testimonial-card .client-text {
+            font-size: 1.2em;
+            /* line-height: 1.5; */
+            color: #dfe6e9;
+            text-align: left;
+            width: 90%;
+        }
+
+        .card.testimonial-card figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        .card.testimonial-card img.profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            margin-bottom: 10px;
+            margin: 20px;
+
+            /* margin-top: -100px; */
+
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            object-fit: cover;
+            border-radius: 50%;
+            /* Make it circular */
+            border: 2px solid white;
+        }
+
+        /* Indicators */
+        .indicators {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .indicators span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicators .active {
+            background-color: #310e68;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #5f0f40;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+
+        @media (max-width: 768px) {
+            .card.testimonial-card h4.client-name {
+                font-size: 2em;
+            }
+
+            .card.testimonial-card p.client-text {
+                font-size: 1.2em;
+            }
+
+            .card.testimonial-card img.profile-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+
+    <!-- HEADER STYLE -->
+    <style>
+        /* Navbar styles */
+        /* .gc_main_menu_wrapper {
+  background-color: rgb(249, 250, 251);
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-area img {
+  width: 50%;
+}
+
+.menu-area .nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-area .nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu-area .nav a {
+  color: black !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.menu-area .nav a:hover {
+  color: #0056b3;
+} */
+
+        /* Dropdown menu */
+        .navbar-toggler {
+            z-index: 1050;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1040;
+            display: none;
+        }
+
+        .navbar-collapse.show+.mobile-overlay {
+            display: block;
+        }
+
+        .navbar-collapse.show {
+            justify-content: flex-end !important;
+            /* Align items to the right */
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .btn-custom {
+            background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn-custom:hover {
+            background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #5f0f40;
+        }
+
+        .container-fluid.px-4 {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .collapse.navbar-collapse {
+            padding-right: 0 !important;
+        }
+    </style>
+    <!-- END HEADER STYLE -->
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:" id="return-to-top" style="background-color: #150c1a;"><i class="fa fa-angle-up"></i></a>
+    <!-- preloader Start -->
+    <!-- <div id="preloader">
+        <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+        </div>
+    </div> -->
+    <!-- Header area start here -->
+
+    <!-- Header area start here -->
+    <style>
+        .navbar-toggler {
+            z-index: 1050;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1040;
+            display: none;
+        }
+
+        .navbar-collapse.show+.mobile-overlay {
+            display: block;
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .btn-custom {
+            background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn-custom:hover {
+            background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #5f0f40;
+        }
+
+        /* Hide Contact Us button on devices smaller than 768px */
+        @media (max-width: 767px) {
+            .btn-custom {
+                display: none;
+            }
+        }
+
+        /* globe hero section */
+
+        /* Base styles for large screens */
+        #carousel-example-generic video {
+            width: 70%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Media query for tablets and smaller screens */
+        @media (max-width: 1024px) {
+            #carousel-example-generic video {
+                width: 80%;
+                /* Adjust width for tablets */
+                top: 0;
+                /* Move video to the top */
+                transform: translateY(0);
+                /* Reset vertical centering */
+                display: none;
+
+            }
+        }
+
+        /* Media query for mobile phones */
+        @media (max-width: 768px) {
+            #carousel-example-generic video {
+                width: 90%;
+                /* Adjust width for mobile phones */
+                top: 0 !important;
+                /* Move video to the top */
+                transform: translateY(0);
+                /* Reset vertical centering */
+                display: none;
+            }
+
+            .card.testimonial-card .client_text {
+                font-size: 10px !important;
+            }
+        }
+
+        /* Media query for very small screens (e.g., landscape phones) */
+        @media (max-width: 480px) {
+            #carousel-example-generic video {
+                width: 100%;
+                /* Full width for very small screens */
+                top: 0;
+                /* Ensure video is at the top */
+                transform: translateY(0);
+                /* Reset vertical centering */
+                display: none;
+
+            }
+        }
+
+        /* General Styles */
+        .slider-content h2 {
+            font-size: 2.5rem;
+            /* Default font size */
+        }
+
+        .slider-content p {
+            font-size: 1rem;
+            /* Default font size */
+        }
+
+        .btn1 {
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+        }
+
+        .who-we-serve-mobile {
+            display: none;
+        }
+
+        .who-we-serve-big-screens {
+            display: block;
+        }
+
+        .flow-steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .separator {
+            flex-grow: 1;
+            height: 2px;
+            /* Adjust height as needed */
+            background-color: #ccc;
+            /* Change color as needed */
+            margin: 0 10px;
+            /* Adjust spacing */
+        }
+
+        /* Media Queries */
+
+        /* For tablets and larger devices */
+        @media (min-width: 991px) {
+            .slider-content h2 {
+                font-size: 2rem;
+                /* Slightly smaller font size */
+            }
+
+            .slider-content p {
+                font-size: 0.9rem;
+                /* Slightly smaller font size */
+            }
+
+            .btn1 {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .discover-our-network-small-screens {
+                display: none;
+            }
+
+            .discover-our-network-big-screens {
+                display: block;
+            }
+        }
+
+        /* For tablets and larger devices */
+        @media (max-width: 991px) {
+            .slider-content h2 {
+                font-size: 2rem;
+                /* Slightly smaller font size */
+            }
+
+            .slider-content p {
+                font-size: 0.9rem;
+                /* Slightly smaller font size */
+            }
+
+            .btn1 {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .discover-our-network-small-screens {
+                display: none;
+            }
+
+            .discover-our-network-big-screens {
+                display: block;
+            }
+        }
+
+        /* For smartphones in portrait mode */
+        @media (max-width: 767px) {
+            .slider-content h2 {
+                font-size: 1.5rem !important;
+                /* Smaller font size */
+                text-align: left;
+                margin-top: -5rem !important;
+
+            }
+
+            .top-intro-stats {
+                margin-top: -16rem;
+            }
+
+            .who-we-serve-mobile {
+                display: block;
+            }
+
+            .who-we-serve-big-screens {
+                display: none;
+            }
+
+            .card.testimonial-card .client_text {
+                font-size: 10px !important;
+            }
+
+
+            .why {
+                font-size: 1.3rem !important;
+            }
+
+            .discover-our-network-small-screens {
+                display: block;
+            }
+
+            .discover-our-network-big-screens {
+                display: none;
+            }
+
+            .separator-div {
+                display: none;
+            }
+
+            .slider-content p {
+                font-size: 0.8rem;
+                /* Smaller font size */
+                text-align: left;
+            }
+
+            .btn1 {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .btc_timer_section_wrapper {
+                display: none;
+                /* Hide the timer section on small screens */
+            }
+        }
+
+        /* For very small screens */
+        @media (max-width: 575px) {
+            .slider-content h2 {
+                font-size: 1.25rem;
+                /* Even smaller font size */
+            }
+
+            .slider-content p {
+                font-size: 0.75rem;
+                /* Even smaller font size */
+            }
+
+            .btn1 {
+                padding: 6px 12px;
+                font-size: 10px;
+            }
+
+            .container-fluid {
+                width: 100%;
+                /* Make container full width on very small screens */
+            }
+        }
+
+
+
+        /* Who we serve section */
+    </style>
+    <!-- END HEADER STYLE -->
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+
+    <body>
+        <a href="javascript:" id="return-to-top" style="background-color: #301934;"><i class="fa fa-angle-up"></i></a>
+        <!-- preloader Start -->
+        <!-- <div id="preloader">
+          <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+          </div>
+      </div> -->
+        <!-- Header area start here -->
+        <div class=" bg-light">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <!-- Logo Area -->
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+                        <div class="logo-area">
+                            <a href="index.html">
+                                <img src="images/logo/logo2.png" alt="logo" class="img-fluid" style="width: 50%;" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Menu Area -->
+                    <div class="col-lg-9 col-md-9 col-sm-8 col-6">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                                style="right: 0 !important;">
+                                <span class="menu-text" style="font-size: 1rem;">&nbsp; Menu</span>
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ml-auto" style="right: 0 !important;">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="solutions.html">Solutions</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">Resources</a>
+                                        <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                                            <a class="dropdown-item" href="blogs.html">Blogs & Events</a>
+                                            <a class="dropdown-item" href="testimonials.html">Testimonials</a>
+                                            <a class="dropdown-item" href="partners.html">Partners</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button"
+                                            data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">Company</a>
+                                        <div class="dropdown-menu" aria-labelledby="companyDropdown">
+                                            <a class="dropdown-item" href="about.html">About Us</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="network.html">Network</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item" style="list-style-type: none;">
+                                <a href="contact.html" class="btn btn-custom text-white" style="bottom: 0 !important;">
+                                    <i class="fa fa-user"></i><span> Contact Us</span>
+                                </a>
+                            </li>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Header area end here -->
+
+
+        <!--Slider area start here-->
+        <section class="slider-area">
+            <canvas>
+                <script src="js/three.js"></script>
+                <script src="js/stats.min.js"></script>
+                <script src="js/Projector.js"></script>
+                <script src="js/CanvasRenderer.js"></script>
+            </canvas>
+            <div id="particles-js" style="background-color: #301934; padding-top: 0; max-height: 100vh;">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
+                    style="position: relative; height: 100vh;">
+                    <video autoplay muted loop
+                        style="width: 70%; height: auto; position: absolute; top: 50%; right: 0; transform: translateY(-50%); object-fit: cover; z-index: -1;">
+                        <source src="gifs/WorldMap5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="carousel-inne" role="listbox">
+                        <div class="item active">
+                            <div class="">
+                                <div class="container-fluid" style="padding-top: 0; width: 90%;">
+                                    <div class="row" style="align-items: flex-start;">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="z-index: 120;">
+                                            <div class="slider-content"
+                                                style="margin-top: -20vh !important; z-index: 100;">
+                                                <h2 data-animation="animated bounceInLeft">Money in Motion, <br>
+                                                    Empowering Africa</h2>
+                                                <p style="color: #fff;" data-animation="animated bounceInRight">
+                                                    MHS is revolutionizing the digital financial landscape by providing
+                                                    a seamless, secure platform
+                                                    for transactions across Africa. Our mission is to make affordable
+                                                    and accessible digital financial
+                                                    services available to all, fostering economic growth and sustainable
+                                                    development. With innovative
+                                                    solutions at the core, MHS empowers individuals and businesses,
+                                                    driving prosperity throughout
+                                                    Africa's financial ecosystem.
+                                                </p>
+                                                <div>
+                                                    <a href="solutions.html" class="btn1"
+                                                        style="background-color: transparent; color: white; padding: 12px 24px; border-radius: 30px; font-size: 16px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid white;"
+                                                        data-animation="animated bounceInUp">
+                                                        <i class="fa fa-tachometer-alt"></i> Discover our capabilities
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-none d-md-block">
+                                            <div class="btc_timer_section_wrapper">
+                                                <div id="clockdiv"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+        <section>
+            <div class="container-fluid top-intro-stats">
+                <div class="row stats-wrap stats-block animate text-center"
+                    style="width: 80%;margin: auto;margin-top: -50px;">
+                    <div class="col-lg-3 col-md-6 col-sm-6 stat-item">
+                        <div class="circle">
+                            <div class="stat-item-num">
+                                <span class="number" data-number="10">0</span>M
+                                <span class="symbol">+</span>
+                            </div>
+                        </div>
+                        <p class="stat-item-text">Transaction Processed daily</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 stat-item">
+                        <div class="circle">
+                            <div class="stat-item-num">
+                                <span class="number" data-number="24">0</span>
+                                <span class="symbol">+</span>
+                            </div>
+                        </div>
+                        <p class="stat-item-text">Countries</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 stat-item">
+                        <div class="circle">
+                            <div class="stat-item-num">
+                                <span class="number" data-number="2">0</span>M
+                                <span class="symbol">+</span>
+                            </div>
+                        </div>
+                        <p class="stat-item-text">Monthly active users</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 stat-item">
+                        <div class="circle">
+                            <div class="stat-item-num">
+                                <span class="number" data-number="10">0</span>
+                            </div>
+                        </div>
+                        <p class="stat-item-text">Available Currencies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        <!--About area start here-->
+
+
+        <div section-scroll='2' class="wd_scroll_wrap" style="background-color: #e1e1e1;">
+            <section class="features-area section" style="background-color: #e1e1e1;">
+                <div id="features-js">
+                    <div class="container" style="background-color: #e1e1e1;">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="section-heading2 wow  fadeInUp animated" data-wow-duration="1.0s"
+                                    style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                                    <h2 class="why" style="font-weight: 800;letter-spacing: 2px;color: #150c1a;">Why
+                                        Choose MHS for African <br> Trade Solutions?</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="background-color: #301934;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="featured-lists">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="tab-content">
+                                            <div id="home" class="tab-pane fade in active">
+                                                <div class="row btc_steps_wrappers">
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                        <div
+                                                            class="btc_steps_main_box_wrapper btc_steps_main_box_wrapper1">
+                                                            <div class="btc_step_icon_wrapper">
+                                                                <div class="btc_step_hover_effect">
+                                                                    <i class="fas fa-user" style="color: #150c1a;"></i>
+                                                                    <!-- Font Awesome user icon with color -->
+                                                                    <div class="btc_step_overlay"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btc_step_icon_cont_wrapper">
+                                                                <h2><a style="color: white;" href=""> <span>1</span>
+                                                                        &nbsp;
+                                                                        Fast and Cost-Effective Transactions </a></h2>
+                                                                <p>
+                                                                    Enjoy quick, traceable transactions across Africa
+                                                                    with significantly lower fees. No middlemen, no
+                                                                    delays—just fast, transparent, and reliable payments
+                                                                    that keep your trade moving.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                        <div
+                                                            class="btc_steps_main_box_wrapper btc_steps_main_box_wrapper2">
+                                                            <div class="btc_step_icon_wrapper">
+                                                                <div class="btc_step_hover_effect">
+                                                                    <i class="fas fa-wallet"
+                                                                        style="color: #150c1a;"></i>
+                                                                    <!-- Font Awesome wallet icon with color -->
+                                                                    <div class="btc_step_overlay"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btc_step_icon_cont_wrapper">
+                                                                <h2 style="color: white;"><a style="color: white;"
+                                                                        href=""> <span>2</span> &nbsp; A Strong and
+                                                                        Trusted Network </a></h2>
+                                                                <p>
+                                                                    Our extensive network, trusted by leading businesses
+                                                                    across the continent, is built on strong,
+                                                                    direct relationships, ensuring reliability and
+                                                                    wide-reaching impact in the African trade market.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                                        <div
+                                                            class="btc_steps_main_box_wrapper btc_steps_main_box_wrapper1">
+                                                            <div class="btc_step_icon_wrapper">
+                                                                <div class="btc_step_hover_effect">
+                                                                    <i class="fas fa-chart-line"
+                                                                        style="color: #150c1a;"></i>
+                                                                    <!-- Font Awesome chart line icon with color -->
+                                                                    <div class="btc_step_overlay"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btc_step_icon_cont_wrapper">
+                                                                <h2><a style="color: white;" href=""><span>3</span>
+                                                                        &nbsp; Pan-African Reach with Local
+                                                                        Expertise</a></h2>
+                                                                <p>
+                                                                    Our trade solutions are optimized for each region,
+                                                                    supported by deep local insights that ensure
+                                                                    efficient and seamless operations, even in the most
+                                                                    challenging markets across Africa. </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="btc_steps_bottom_line_wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="wd_scroll_wrap">
+            <div class="container-fluid" style="background-color: #e1e1e1; padding: 40px;">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="wow fadeInUp animated"
+                            style="color: #150c1a; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;"
+                            data-wow-duration="1.0s">
+                            Who we serve
+                        </h1>
+                    </div>
+                </div>
+                <div class="who-we-serve-mobile">
+
+                    <div id="cardCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <!-- Card 1 -->
+                                    <div class="col-12">
+                                        <div class="card h-100"
+                                            style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                            <div class="card-header text-center"
+                                                style="background-color: transparent; border-bottom: none;">
+                                                <i class="fa fa-paper-plane fa-2x" style="color: #f39c12;"></i>
+                                                <h3 style="font-weight: 800; letter-spacing: 2px;">Remittance Providers
+                                                </h3>
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <p>Offer faster, more visible payments in more countries and currencies.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <!-- Card 2 -->
+                                    <div class="col-12">
+                                        <div class="card h-100"
+                                            style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                            <div class="card-header text-center"
+                                                style="background-color: transparent; border-bottom: none;">
+                                                <i class="fa fa-university fa-2x" style="color: #3498db;"></i>
+                                                <h3 style="font-weight: 800; letter-spacing: 2px;">Banks</h3>
+                                            </div>
+                                            <div class="card-body text-center">
+                                                <p>Integrate with our payment network and unlock a world of
+                                                    opportunities.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more carousel items with additional cards here -->
+                        </div>
+                        <a class="carousel-control-prev" href="#cardCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#cardCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="who-we-serve-big-screens">
+                    <div class="row">
+                        <!-- Card 1 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100"
+                                style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                <div class="card-header text-center"
+                                    style="background-color: transparent; border-bottom: none;">
+                                    <i class="fa fa-paper-plane fa-2x" aria-hidden="true" style="color: #f39c12;"></i>
+                                    <h3 style="font-weight: 800;letter-spacing: 2px;">Remittance Providers</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p>Offer faster, more visible payments in more countries and currencies.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100"
+                                style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                <div class="card-header text-center"
+                                    style="background-color: transparent; border-bottom: none;">
+                                    <i class="fa fa-university fa-2x" aria-hidden="true" style="color: #3498db;"></i>
+                                    <h3 style="font-weight: 800;letter-spacing: 2px;">Banks</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p>Integrate with our payment network and unlock a world of opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100"
+                                style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                <div class="card-header text-center"
+                                    style="background-color: transparent; border-bottom: none;">
+                                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true" style="color: #e74c3c;"></i>
+                                    <h3 style="font-weight: 800;letter-spacing: 2px;">Digital Merchants</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p>Streamline cross-border transactions for effortless international business.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100"
+                                style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                <div class="card-header text-center"
+                                    style="background-color: transparent; border-bottom: none;">
+                                    <i class="fa fa-exchange fa-2x" aria-hidden="true" style="color: #2ecc71;"></i>
+                                    <h3 style="font-weight: 800;letter-spacing: 2px;">Platforms and Marketplaces</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p>Enhance the experience for buyers and sellers with swift, compliant, and
+                                        transparent cross-border payments.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100"
+                                style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                <div class="card-header text-center"
+                                    style="background-color: transparent; border-bottom: none;">
+                                    <i class="fa fa-credit-card fa-2x" aria-hidden="true" style="color: #9b59b6;"></i>
+                                    <h3 style="font-weight: 800;letter-spacing: 2px;">Payment Service Providers</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p>Provide quicker, more transparent payments across a wider range of countries and
+                                        currencies.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100"
+                                style="background-color: #301934; color: white; border: none; border-radius: 10px;">
+                                <div class="card-header text-center"
+                                    style="background-color: transparent; border-bottom: none;">
+                                    <i class="fa fa-mobile fa-2x" aria-hidden="true" style="color: #16a085;"></i>
+                                    <h3 style="font-weight: 800;letter-spacing: 2px;">Mobile Wallets</h3>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p>Instantly broaden your payment network and tap into rapidly growing markets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div section-scroll='4' class="wd_scroll_wrap">
+
+            <section id="network" class="network-details ">
+                <div class="container-fluid section-with-b">
+                    <h1 class="wow fadeInUp animated"
+                        style="color: #fff;padding: 30px;font-weight: 800;letter-spacing: 2px;"
+                        data-wow-duration="1.0s">
+                        Discover Our Network
+                    </h1>
+                    <div class="discover-our-network-big-screens">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-md-10 col-sm-12">
+                                <div class="network-flow">
+                                    <ul class="flow-steps">
+                                        <!-- Step 1 -->
+                                        <li class="step row align-items-center">
+                                            <div class="col-md-6 text-right">
+                                                <div class="step-content wow fadeInUp animated"
+                                                    data-wow-duration="1.0s">
+                                                    <h2 class="card p-2" style="color: #150c1a;text-align: left;">01.
+                                                        Money Transfer Operators</h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-left separator-div d-flex justify-content-center">
+                                                <div class="separator"></div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Step 2 -->
+                                        <li class="step row align-items-center separator-div">
+                                            <div class="col-md-6 text-left d-flex justify-content-center">
+                                                <div class="separator"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="step-content wow fadeInUp animated"
+                                                    data-wow-duration="1.3s">
+                                                    <h2 class="card p-2" style="color: #150c1a;">02. Payment Service
+                                                        Providers</h2>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Step 3 -->
+                                        <li class="step row align-items-center">
+                                            <div class="col-md-6 text-right">
+                                                <div class="step-content wow fadeInUp animated"
+                                                    data-wow-duration="1.6s">
+                                                    <h2 class="card p-2" style="color: #150c1a;text-align: left;">03.
+                                                        Marketplaces</h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-left d-flex separator-div justify-content-center">
+                                                <div class="separator"></div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Step 4 -->
+                                        <li class="step row align-items-center">
+                                            <div class="col-md-6 text-left d-flex separator-div justify-content-center">
+                                                <div class="separator"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="step-content wow fadeInUp animated"
+                                                    data-wow-duration="1.9s">
+                                                    <h2 class="card p-2" style="color: #150c1a;">04. Digital Merchants
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Step 5 -->
+                                        <li class="step row align-items-center">
+                                            <div class="col-md-6 text-right">
+                                                <div class="step-content wow fadeInUp animated"
+                                                    data-wow-duration="2.2s">
+                                                    <h2 class="card p-2" style="color: #150c1a;text-align: left;">05.
+                                                        Banks</h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-left d-flex separator-div justify-content-center">
+                                                <div class="separator"></div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Step 6 -->
+                                        <li class="step row align-items-center">
+                                            <div class="col-md-6 text-left separator-div d-flex justify-content-center">
+                                                <div class="separator"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="step-content wow fadeInUp animated"
+                                                    data-wow-duration="2.5s">
+                                                    <h2 class="card p-2" style="color: #150c1a;">06. Mobile Wallets</h2>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discover-our-network-small-screens">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-md-10 col-sm-12">
+                                <ul class="flow-steps">
+                                    <!-- Step 1 -->
+                                    <li class="step wow fadeInUp" data-wow-duration="1.0s">
+                                        <h5 class="card p-2" style="color: #150c1a;">01. Money Transfer Operators</h2>
+                                            <div class="separator"></div>
+                                    </li>
+
+                                    <!-- Step 2 -->
+                                    <li class="step wow fadeInUp" data-wow-duration="1.3s">
+                                        <h5 class="card p-2" style="color: #150c1a;">02. Payment Service Providers</h2>
+                                            <div class="separator"></div>
+                                    </li>
+
+                                    <!-- Step 3 -->
+                                    <li class="step wow fadeInUp" data-wow-duration="1.6s">
+                                        <h5 class="card p-2" style="color: #150c1a;">03. Marketplaces</h2>
+                                            <div class="separator"></div>
+                                    </li>
+
+                                    <!-- Step 4 -->
+                                    <li class="step wow fadeInUp" data-wow-duration="1.9s">
+                                        <h5 class="card p-2" style="color: #150c1a;">04. Digital Merchants</h2>
+                                            <div class="separator"></div>
+                                    </li>
+
+                                    <!-- Step 5 -->
+                                    <li class="step wow fadeInUp" data-wow-duration="2.2s">
+                                        <h5 class="card p-2" style="color: #150c1a;">05. Banks</h2>
+                                            <div class="separator"></div>
+                                    </li>
+
+                                    <!-- Step 6 -->
+                                    <li class="step wow fadeInUp" data-wow-duration="2.5s">
+                                        <h5 class="card p-2" style="color: #150c1a;">06. Mobile Wallets</h2>
+                                            <div class="separator"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="contaner">
+                    <section>
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <div class="car">
+                                    <h2
+                                        style="color: #fff;text-align: center;font-weight: 800;letter-spacing: 2px;font-family: Arial, Helvetica, sans-serif;">
+                                        Download our Apps</h2>
+                                    <div class="app-download-buttons">
+                                        <a href="https://play.google.com/store/apps/details?id=com.impalapay.mamlaka.wuyi"
+                                            class="app-button">
+                                            <img src="https://imgs.search.brave.com/gB6qNBqLCPcK8y1RftQKdgGQ4jVi_FeIxk0sFpWaFhI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL2ds/MmxRX0w1RTNwQ1l5/bmFTMWMzVzdoeFEt/T1FXOTdzSUJTVjdq/YWRlWWE1aUh5ZHFF/aDBER0RwdFNwQ2lj/UXdhblBoSjVWX3hD/WWdiTF8tY1RMLUJX/c2lJVFRNc0NuMXV3/WF9qWHBsXzN1SmE2/eWV3blk9czAtcmot/YzB4ZmZmZmZm.jpeg"
+                                                alt="Download Android App">
+                                        </a>
+                                        <span>
+                                            <a href="https://apps.apple.com/ke/app/impalapay-mobile/id6449749069"
+                                                class="app-button">
+                                                <img src="https://template-kit.evonicmedia.com/layout90/wp-content/uploads/2024/06/Group-427319483.png"
+                                                    alt="Download iOS App">
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+
+
+        </div>
+
+
+        </div>
+
+        <div section-scroll='7' id="testimonials" class="wd_scroll_wrap">
+            <section class="blog-area section" style="background-color: #e1e1e1;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="section-heading2">
+                                <h2 class="wow  fadeInUp animated" data-wow-duration="1.0s"
+                                    style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;font-weight: 800;color: #150c1a;letter-spacing: 2px;">
+                                    What our clients say</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="testimonial-section vh-100 d-flex align-items-center">
+                        <div class="container">
+                            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner slides">
+                                    <!-- Dynamic content will be injected here -->
+                                </div>
+                                <a class="carousel-control-prev" href="#testimonialCarousel" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#testimonialCarousel" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <div class="indicators slides text-center mt-3">
+                                <!-- Dynamic indicators will be generated here -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section class="media-area section bg-img jarallax" style="background-color: #301934;">
+                <div class="container" style="background-color: #301934;">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="section-heading">
+                                <h1 class="wow fadeInUp animated"
+                                    style="color: white;background-color: transparent;padding: 30px;font-weight: 800;letter-spacing: 2px;"
+                                    data-wow-duration="1.0s">
+                                    Our clients
+                                </h1>
+                                <h4 class="wow  fadeInUp animated" data-wow-duration="1.0s"
+                                    style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;text-align: left;color: white;letter-spacing: 2px;">
+                                    We partner with visionaries to drive global innovation
+                                </h4>
+                            </div>
+                        </div>
+                        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card text-center wow  "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/naivas.png" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card text-center wow  "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/Bollore_Logistics.png" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card text-center wow  "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/Celo_Logo.png" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card text-center  "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/DHL.png" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card text-center   "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/impala.png" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card text-center  "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/Isuzu-logo.png" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card text-center  "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/pci.jpg" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card text-center  "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/adanian.jpeg" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border-bottom: none; padding: 10px 10px;">
+                                                <a href=""><img src="images/partners/blockchain.jpeg" alt=""
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 11 -->
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/utmost.jpeg" alt="Utmost"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                       <!-- Card 12 -->
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                                <div class="card text-center "
+                                                    style="background-color: #301934; border: none; padding: 10px;">
+                                                    <a href=""><img src="images/partners/syngenta.jpeg" alt="Syngenta"
+                                                            style="width: 70px;" /></a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 13 -->
+                                            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                                <div class="card text-center "
+                                                    style="background-color: #301934; border: none; padding: 10px;">
+                                                    <a href=""><img src="images/partners/unilever.jpeg" alt="Unilever"
+                                                            style="width: 70px;" /></a>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <!-- Card 14 -->
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/rabobank.jpeg" alt="Rabobank"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card 15 -->
+                                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/cargill.jpeg" alt="Cargill"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                  
+
+                                <!-- Card 16 -->
+                                
+                                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center"
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/bayer.jpeg" alt="Bayer"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                    </div></div>
+                                    <div class="carousel-item">
+                                    <div class="row">
+                                        <!-- Card 17 -->
+                                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/dupont.jpeg" alt="DuPont"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Card 18 -->
+                                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/monsanto.jpeg" alt="Monsanto"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                            
+
+                                <!-- Card 19 -->
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/adama.jpeg" alt="Adama"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div>
+                                    </div></div>
+                                        <!-- Card 20 -->
+                                        <!-- <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mb-4">
+                                            <div class="card text-center "
+                                                style="background-color: #301934; border: none; padding: 10px;">
+                                                <a href=""><img src="images/partners/nutreco.jpeg" alt="Nutreco"
+                                                        style="width: 70px;" /></a>
+                                            </div>
+                                        </div> -->
+                                   
+
+                                <!-- Add more carousel-item divs for additional slides -->
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+        </div>
+        </section>
+        <footer style="background-color: #e1e1e1; color: #150c1a; padding: 40px 20px;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <div class="row">
+                    <!-- Subscribe Section -->
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <h4 style="color: #150c1a; margin-bottom: 20px;">Subscribe to Our Newsletter</h4>
+                        <div class="card p-3" id="subscribe-message"
+                            style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;">
+                        </div>
+                        <br>
+                        <form id="subscribe-form"
+                            action="https://owilly.pythonanywhere.com/api/blog/subscriptions/create/" method="POST"
+                            style="display: flex; flex-direction: column; max-width: 400px;">
+                            <input type="email" name="email" placeholder="Enter your email" required
+                                style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none; background-color: #301934; color: #ffffff;">
+                            <button type="submit"
+                                style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Us Section -->
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <h4 style="color: #150c1a; margin-bottom: 20px;">Contact Us</h4>
+                        <div id="contact-message" class="card p-3"
+                            style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;">
+                        </div>
+                        <br>
+                        <form id="contact-form" action="https://owilly.pythonanywhere.com/api/blog/contact-us/create/"
+                            method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                            <input type="text" name="name" placeholder="Your Name" required
+                                style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;">
+                            <input type="email" name="email" placeholder="Your Email" required
+                                style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: 2px solid #301934;background-color: #301934;color: #ffffff;">
+                            <textarea name="message" placeholder="Your Message" rows="4" required
+                                style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;"></textarea>
+                            <button type="submit"
+                                style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;width: 150px;align-items: right;">Send
+                                Message</button>
+                        </form>
+
+                    </div>
+                    <div class="col-md-4">
+                        <h4 style="color: #150c1a; margin-bottom: 20px;">Loction and Address</h4>
+
+                        <div class=" wow  fadeIn animated" data-wow-duration="1.5s"
+                            style="background-color: transparent;color: #150c1a;">
+                            <div class="team2-are btc_right_contt"
+                                style="background-color: transparent;color: #150c1a;">
+                                <div class="team-list" style="background-color: transparent;color: #150c1a;">
+                                    <div class="btc_cot_list_main_wrapper"
+                                        style="background-color: transparent;color: #150c1a;">
+                                        <div class="btc_cott_list_inner_wrapper"
+                                            style="background-color: transparent;color: #150c1a;">
+                                            <div class="btc_contt_icon_wrapper"
+                                                style="background-color: transparent;color: #150c1a;">
+                                                <i class="fa fa-map-marker"></i>
+                                            </div>
+                                            <div class="btc_contt_icon_cont_wrapper"
+                                                style="background-color: transparent;color: #150c1a;">
+                                                <p style="color: #150c1a;">Wu-Yi Plaza, Galana Road, Kilimani, Nairobi,
+                                                    Kenya.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2">
+                                            <div class="btc_contt_icon_wrapper" style="color: #150c1a;">
+                                                <i class="fa fa-phone" style="color: #150c1a;"></i>
+                                            </div>
+                                            <div class="btc_contt_icon_cont_wrapper" style="color: #150c1a;">
+                                                <p style="color: #150c1a;">+254 103 102 336</p>
+                                            </div>
+                                        </div>
+                                        <div class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2">
+                                            <div class="btc_contt_icon_wrapper">
+                                                <i class="fa fa-envelope" style="color: #150c1a;"></i>
+                                            </div>
+                                            <div class="btc_contt_icon_cont_wrapper">
+                                                <p><a style="color: #150c1a;"
+                                                        href="mailto:hello@mam-laka.com">hello@mam-laka.com</a>
+                                                </p>
+                                                <p style="color: #150c1a;">Monday - Friday 08:00 - 18:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for form submission -->
+
+
+        <footer class="foo-bot" style="background-color: #301934;">
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="copyright wow fadeInUp animated" data-wow-duration="1.9s"
+                                style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                                <p style="text-transform: capitalize;"> © Copyright Mam-laka Hub & Spoke.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="fadeInUp animated icon-container"
+                                style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp; display: flex; justify-content: center; align-items: center; gap: 10px;">
+
+                                <a href="https://ke.linkedin.com/company/mamlaka-hub-and-spoke">
+                                    <div class="icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                            class="hover-icon">
+                                            <path
+                                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.72 0 54.36A53.79 53.79 0 01107.57 0C137.27 0 160 24.38 160 53.74c0 29.36-22.73 54.36-53.79 54.36zm394.51 339.9h-92.81V302.4c0-34.7-13.45-58.42-46.94-58.42-25.59 0-40.82 17.22-47.55 33.82-2.45 5.98-3.08 14.38-3.08 22.77v147.4H166.41s1.24-239.31 0-264.1h92.82v37.43c-1.2 1.94-2.86 3.82-4.01 5.74h4.01V184.7c12.35-19.06 34.4-46.29 83.54-46.29 60.95 0 106.59 39.83 106.59 125.39v184.2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </a>
+
+                                <a href="https://x.com/TheAbojani">
+                                    <div class="icon-wrapper">
+                                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                                            class="hover-icon">
+                                            <path
+                                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <a href="https://web.facebook.com/profile.php?id=61550738654440">
+                                    <div class="icon-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                                            class="hover-icon">
+                                            <path
+                                                d="M279.14 288l14.22-92.66h-88.91V142.18c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S257.26 0 225.36 0C141.09 0 89.47 54.02 89.47 144.97v50.37H0v92.66h89.47V512h107.1V288z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="foo-link wow fadeInUp animated" data-wow-duration="1.0s"
+                                style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                                <ul style="list-style: none; padding: 0;">
+                                    <li><a style="text-transform: capitalize;" href="terms_and_coditions.html"
+                                            style="color: #e1e1e1;">Terms of Use</a></li>
+                                    <li><a style="text-transform: capitalize;" href="privacy_policy.html"
+                                            style="color: #e1e1e1;">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        </div>
+        <!--Footer area end here-->
+        <!-- all js here -->
+        <!-- jquery latest version -->
+        <script src="js/vendor/jquery-3.2.1.min.js"></script>
+        <!-- tether js -->
+        <script src="js/tether.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- owl.carousel js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- meanmenu js -->
+        <script src="js/jquery.meanmenu.js"></script>
+        <!-- jquery-ui js -->
+        <script src="js/jquery-ui.min.js"></script>
+        <!-- easypiechart js -->
+        <script src="js/jquery.easypiechart.min.js"></script>
+        <!-- particles js -->
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- smooth-scroll js -->
+        <script src="js/smooth-scroll.min.js"></script>
+        <!-- plugins js -->
+        <script src="js/plugins.js"></script>
+        <!-- EChartJS JavaScript -->
+        <script src="js/echarts-en.min.js"></script>
+        <script src="js/echarts-liquidfill.min.js"></script>
+        <script src="js/vc_round_chart.min.js"></script>
+        <script src="js/videojs-ie8.min.js"></script>
+        <script src="js/video.js"></script>
+        <script src="js/Youtube.min.js"></script>
+        <!-- main js -->
+        <script src="js/main.js"></script>
+
+        <!-- HEADER SCRIPT -->
+
+        <!-- <script>
+            document.addEventListener('DOMContentLoaded', function() {
+  var menuToggle = document.getElementById('toggle');
+  var sidebar = document.getElementById('sidebar');
+  var toggleClose = document.getElementById('toggle_close');
+
+  menuToggle.addEventListener('click', function() {
+    sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+  });
+
+  toggleClose.addEventListener('click', function() {
+    sidebar.style.display = 'none';
+  });
+});
+
+        </script> -->
+        <!-- END HEADER SCRIPT -->
+
+        <!-- blog -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const blogContainer = document.getElementById('blog-container');
+
+                // Fetch blog posts from the API
+                fetch('https://owilly.pythonanywhere.com/api/blog/blogposts/')
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(post => {
+                            // Parse and format the datetime
+                            const createdAt = new Date(post.created_at).toISOString();
+                            const formattedDate = new Date(createdAt).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                second: 'numeric'
+                            });
+
+                            // Determine the HTML for media (image or video)
+                            const mediaHTML = `
+                                ${post.image ? `
+                                    <figure class="media-figure"><img src="${post.image}" alt="Blog Image" class="media-content" /></figure>
+                                ` : ''}
+                                ${post.video ? `
+                                    <figure class="media-figure"><video controls class="media-content"><source src="${post.video}" type="video/mp4">Your browser does not support the video tag.</video></figure>
+                                ` : ''}
+                            `;
+
+                            const blogHTML = `
+                                <div class="row blog-container">
+                                    ${mediaHTML ? `
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-media">
+                                            ${mediaHTML}
+                                        </div>
+                                    ` : ''}
+                                    <div class="col-lg-${mediaHTML ? '8' : '12'} col-md-${mediaHTML ? '8' : '12'} col-sm-12 col-xs-12 blog-content">
+                                        <div class="content">
+                                            <h4 class="blog-title"><a href="#" style='color:#150c1a'>${post.title}</a></h4>
+                                            <p class="blog-excerpt" style='color:#150c1a'>${post.excerpt}</p>
+                                            <span class="blog-date" style='color:#150c1a'><i class="fa fa-calendar-o"></i>&nbsp; &nbsp; ${formattedDate}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+
+                            // Append the generated HTML to the blog container
+                            blogContainer.innerHTML += blogHTML;
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching blog posts:', error);
+                        blogContainer.innerHTML = `<p>Failed to load blog posts. Please try again later.</p>`;
+                    });
+            });
+        </script>
+
+
+        <!-- Start testimonials -->
+
+        <!-- testimonials -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slidesContainer = document.querySelector('.slides');
+                const indicatorsContainer = document.querySelector('.indicators');
+
+                if (!slidesContainer || !indicatorsContainer) {
+                    console.error('Slides or indicators container not found in the DOM.');
+                    return;
+                }
+                let currentIndex = 0;
+
+                function fetchTestimonials() {
+                    fetch('https://owilly.pythonanywhere.com/api/blog/testimonials/')
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('Fetched data:', data); // Log the raw data
+                            if (Array.isArray(data) && data.length > 0) {
+                                renderTestimonials(data);
+                                createIndicators(data.length);
+                                startSlider();
+                            } else {
+                                showEmptyMessage();
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching testimonials:', error);
+                            showEmptyMessage();
+                        });
+                }
+
+                function renderTestimonials(testimonials) {
+                    console.log('Rendering testimonials:', testimonials); // Check the data being passed
+                    slidesContainer.innerHTML = ''; // Clear previous content
+
+                    testimonials.forEach((testimonial, index) => {
+                        const slide = document.createElement('div');
+                        slide.classList.add('carousel-item');
+                        if (index === 0) {
+                            slide.classList.add('active');
+                        }
+
+                        slide.innerHTML = `
+            <div class="card testimonial-card text-center">
+                <div class="card-body">
+                    <p class="client-text">${testimonial.client_text || 'No feedback available.'}</p>
+                    <figure>
+                        <img src="${testimonial.profile_image || 'default-profile.png'}" alt="${testimonial.client_name || 'Anonymous'}" class="profile-image rounded-circle" />
+                    </figure>
+                    <span class="client-name">${testimonial.client_name || 'Anonymous'}</span>
+                </div>
+            </div>
+        `;
+
+                        slidesContainer.appendChild(slide);
+                    });
+
+                    console.log('Testimonials rendered successfully');
+                }
+
+                function createIndicators(count) {
+                    indicatorsContainer.innerHTML = '';
+                    for (let i = 0; i < count; i++) {
+                        const indicator = document.createElement('button');
+                        indicator.classList.add('btn', 'btn-primary', 'mx-1');
+                        indicator.setAttribute('data-slide-to', i);
+                        indicator.setAttribute('data-target', '#testimonialCarousel');
+                        indicator.innerText = i + 1;
+
+                        indicatorsContainer.appendChild(indicator);
+                    }
+                }
+
+                function startSlider() {
+                    setInterval(() => {
+                        currentIndex = (currentIndex + 1) % slidesContainer.children.length;
+                        $('#testimonialCarousel').carousel(currentIndex);
+                    }, 5000);
+                }
+
+                function showEmptyMessage() {
+                    slidesContainer.innerHTML = `
+            <div class="carousel-item active">
+                <p style="text-align: center; color: #555; font-size: 16px; padding: 20px; margin: 0;">
+                    <i class="fa fa-exclamation-circle" style="font-size: 24px; color: #555;"></i>
+                    No testimonials available at the moment. Please check back later.
+                </p>
+            </div>
+        `;
+                }
+
+                fetchTestimonials();
+            });
+        </script>
+        <!-- slider buttons -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slidesContainer = document.querySelector('.slides');
+                const slides = document.querySelectorAll('.slide');
+                let currentIndex = 0;
+
+                function showSlide(index) {
+                    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    showSlide(currentIndex);
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    showSlide(currentIndex);
+                }
+
+                document.querySelector('.next-btn').addEventListener('click', nextSlide);
+                document.querySelector('.prev-btn').addEventListener('click', prevSlide);
+            });
+
+        </script>
+
+        <!-- CONTACT STARTS ends -->
+        <script>
+            // Function to handle form submission
+            function handleFormSubmission(formId, messageDivId, successMessage, errorMessage) {
+                document.getElementById(formId).addEventListener('submit', function (e) {
+                    e.preventDefault(); // Prevent default form submission
+                    const form = e.target;
+                    const formData = new FormData(form);
+                    const messageDiv = document.getElementById(messageDivId);
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: JSON.stringify(Object.fromEntries(formData)),
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Display message from backend or custom success message
+                            if (data.status === 'success') {
+                                messageDiv.textContent = successMessage;
+                                messageDiv.style.color = 'green';
+                            } else {
+                                messageDiv.textContent = data.message || errorMessage;
+                                messageDiv.style.color = 'red';
+                            }
+                            messageDiv.style.display = 'block';
+                            form.reset(); // Clear the form
+                        })
+                        .catch(() => {
+                            // Display generic error message
+                            messageDiv.textContent = errorMessage;
+                            messageDiv.style.color = 'red';
+                            messageDiv.style.display = 'block';
+                        });
+                });
+            }
+
+            // Handle subscription form submission
+            handleFormSubmission(
+                'subscribe-form',
+                'subscribe-message',
+                'Subscription successful! Thank you for subscribing.',
+                'There was an error subscribing. Please try again.'
+            );
+
+            // Handle contact form submission
+            handleFormSubmission(
+                'contact-form',
+                'contact-message',
+                'Message sent successfully! We will get back to you soon.',
+                'There was an error sending your message. Please try again.'
+            );
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const stats = document.querySelectorAll('.stat-item-num .number');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const target = entry.target;
+                            const updateCount = () => {
+                                const targetValue = +target.getAttribute('data-number');
+                                const current = +target.innerText;
+                                const increment = Math.ceil(targetValue / 100); // Adjust increment as needed
+
+                                if (current < targetValue) {
+                                    target.innerText = current + increment;
+                                    setTimeout(updateCount, 100); // Adjust speed as needed
+                                } else {
+                                    target.innerText = targetValue;
+                                }
+                            };
+                            updateCount();
+                            observer.unobserve(target); // Stop observing once counting is done
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Trigger when 10% of the element is visible
+                });
+
+                stats.forEach(stat => {
+                    observer.observe(stat);
+                });
+            });
+        </script>
+
+        <!-- Who we serve carousel -->
+        <script>
+            $(document).ready(function () {
+                $('#cardCarousel').carousel({
+                    interval: 2000 // Adjust the interval time as needed
+                });
+            });
+        </script>
+
+
+    </body>
+
+</html>

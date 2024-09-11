@@ -1,0 +1,1185 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Mamlaka Hub & Spoke</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="logo.jpeg">
+
+    <!-- BOOTSTRAP -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- end bootstrap -->
+
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- bxslider css -->
+    <!--flaticon css -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/video-js.css" rel="stylesheet">
+
+
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .icon-wrapper {
+            display: inline-block;
+        }
+
+        .hover-icon {
+            fill: #e1e1e1;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e1e1e1;
+            padding: 8px;
+            background-color: transparent;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hover-icon:hover {
+            background-color: #150c1a;
+            cursor: pointer;
+            transform: rotate(15deg);
+        }
+
+
+        #partner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            overflow: hidden;
+            max-height: 200px;
+            /* Adjust based on your layout */
+            transition: max-height 0.3s ease;
+        }
+
+        #partner-list.expanded {
+            max-height: none;
+        }
+
+        .show-more {
+            background: transparent;
+            border: none;
+            color: #007bff;
+            /* Adjust based on your design */
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .show-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .show-more.rotate i {
+            transform: rotate(180deg);
+        }
+    </style>
+    <style>
+        .network-area {
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .network-details {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .network-heading h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .network-flow {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .flow-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .flow-steps .step {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .flow-steps .step-content {
+            width: 45%;
+            text-align: left;
+            background-color: #301934;
+            /* Semi-transparent background */
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .flow-steps .step.left-step .step-content {
+            margin-left: auto;
+        }
+
+        .flow-steps .step.right-step .step-content {
+            margin-right: auto;
+        }
+
+        .flow-steps:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #fff 50%, transparent) repeat-y;
+            background-size: 0 20px;
+            z-index: 1;
+        }
+
+        .flow-steps .step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .app-download-buttons {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .app-button img {
+            width: 150px;
+            margin: 0 10px;
+        }
+
+        .explore-button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .explore-button:hover {
+            background-color: #0088cc;
+        }
+
+        /* carousel */
+
+        .carousel-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #301934;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #301934;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-body {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls span {
+            background-color: grey;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* cards */
+
+        .card {
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-header {
+            border-bottom: none;
+        }
+
+
+        .icon-wrapper i {
+            color: white;
+        }
+
+        .card-header h3 {
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .card-body p {
+            margin: 0;
+        }
+    </style>
+
+    <!-- HEADER STYLE -->
+    <style>
+        /* Navbar styles */
+        /* .gc_main_menu_wrapper {
+  background-color: rgb(249, 250, 251);
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-area img {
+  width: 50%;
+}
+
+.menu-area .nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-area .nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu-area .nav a {
+  color: black !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.menu-area .nav a:hover {
+  color: #0056b3;
+} */
+
+        /* Dropdown menu */
+        . .navbar-toggler {
+            z-index: 1050;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1040;
+            display: none;
+        }
+
+        .navbar-collapse.show+.mobile-overlay {
+            display: block;
+        }
+
+        .navbar-collapse.show {
+            justify-content: flex-end !important;
+            /* Align items to the right */
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .btn-custom {
+            background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn-custom:hover {
+            background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #5f0f40;
+        }
+
+        .container-fluid.px-4 {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .collapse.navbar-collapse {
+            padding-right: 0 !important;
+        }
+    </style>
+    <!-- END HEADER STYLE -->
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:" id="return-to-top" style="background-color: #150c1a;"><i class="fa fa-angle-up"></i></a>
+    <!-- preloader Start -->
+    <!-- <div id="preloader">
+        <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+        </div>
+    </div> -->
+    <!-- Header area start here -->
+
+    <!-- Header area start here -->
+    <style>
+        .section-title {
+            color: #150c1a !important;
+        }
+
+        .sub-title {
+            color: #150c1a !important;
+
+        }
+
+        .text {
+            color: #150c1a !important;
+
+        }
+
+        .navbar-toggler {
+            z-index: 1050;
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1040;
+            display: none;
+        }
+
+        .navbar-collapse.show+.mobile-overlay {
+            display: block;
+        }
+
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .btn-custom {
+            background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn-custom:hover {
+            background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #5f0f40;
+        }
+
+        /* Hide Contact Us button on devices smaller than 768px */
+        @media (max-width: 767px) {
+            .btn-custom {
+                display: none;
+            }
+        }
+    </style>
+    </style>
+    <!-- END HEADER STYLE -->
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+
+    <body>
+        <a href="javascript:" id="return-to-top" style="background-color: #150c1a;"><i class="fa fa-angle-up"></i></a>
+        <!-- preloader Start -->
+        <!-- <div id="preloader">
+          <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+          </div>
+      </div> -->
+        <!-- Header area start here -->
+        <div class=" bg-light">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <!-- Logo Area -->
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+                        <div class="logo-area">
+                            <a href="index.html">
+                                <img src="images/logo/logo2.png" alt="logo" class="img-fluid" style="width: 50%;" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Menu Area -->
+                    <div class="col-lg-9 col-md-9 col-sm-8 col-6">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                                style="right: 0 !important;">
+                                <span class="menu-text" style="font-size: 1rem;">&nbsp; Menu</span>
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ml-auto" style="right: 0 !important;">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="solutions.html">Solutions</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">Resources</a>
+                                        <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                                            <a class="dropdown-item" href="blogs.html">Blogs & Events</a>
+                                            <a class="dropdown-item" href="testimonials.html">Testimonials</a>
+                                            <a class="dropdown-item" href="partners.html">Partners</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button"
+                                            data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">Company</a>
+                                        <div class="dropdown-menu" aria-labelledby="companyDropdown">
+                                            <a class="dropdown-item" href="about.html">About Us</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="network.html">Network</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item" style="list-style-type: none;">
+                                <a href="contact.html" class="btn btn-custom text-white" style="bottom: 0 !important;">
+                                    <i class="fa fa-user"></i><span> Contact Us</span>
+                                </a>
+                            </li>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--Header area end here-->
+        <div section-scroll='7' class="wd_scroll_wrap">
+            <section class="">
+                <div section-scroll='' id="solutions" class="wd_scroll_wrap" style="background-color: #e1e1e1;">
+                    <section class="projects bg-img pd-t100 pd-b70 jarallax" style="background-color: #e1e1e1;">
+                        <div class="container">
+                            <h1 class="wow fadeInUp animated"
+                                style="color: #150c1a; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;text-align: center;"
+                                data-wow-duration="1.0s">
+                                Solutions
+                            </h1>
+                            <div class="wd_scroll_wrap">
+                                <div class="container-fluid" style="background-color: #e1e1e1; padding: 40px;">
+                                    <div class="row">
+                                        <div class="col-lg-12 text-center">
+                                            <p class="wow fadeInUp animated"
+                                                style="color: ; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;"
+                                                data-wow-duration="1.0s">
+                                                We offer comprehensive support throughout the entire product lifecycle,
+                                                including product design, post-launch care, and end-user assistance.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Card 1 -->
+                                        <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                            <div class="card h-100" style="background-color: white; color: #150c1a; border: none; border-radius: 10px; padding: 20px;">
+                                                <div class="text-center mb-3">
+                                                    <i class="fa fa-paper-plane fa-3x" aria-hidden="true" style="color: #f39c12;"></i>
+                                                    <h4 style="font-weight: 800; letter-spacing: 2px;">A full-service offering</h4>
+                                                </div>
+                                                <p>Market Efficiencies and Commodity Focus. We streamline market operations by leveraging AI and Machine Learning to optimize commodity trading and enhance market efficiencies. Our platform is designed to ensure that all transactions are both effective and profitable.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Card 2 -->
+                                        <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                            <div class="card h-100" style="background-color: white; color: #150c1a; border: none; border-radius: 10px; padding: 20px;">
+                                                <div class="text-center mb-3">
+                                                    <i class="fa fa-university fa-3x" aria-hidden="true" style="color: #3498db;"></i>
+                                                    <h4 style="font-weight: 800; letter-spacing: 2px;">Liquidity and Collaboration Among Traders</h4>
+                                                </div>
+                                                <p>Our solutions foster collaboration and liquidity within the trading community. By providing tools that enhance communication and data sharing, we enable traders to maximize their opportunities in the market.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Card 3 -->
+                                        <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                            <div class="card h-100" style="background-color: white; color: #150c1a; border: none; border-radius: 10px; padding: 20px;">
+                                                <div class="text-center mb-3">
+                                                    <i class="fa fa-shopping-cart fa-3x" aria-hidden="true" style="color: #e74c3c;"></i>
+                                                    <h4 style="font-weight: 800; letter-spacing: 2px;">Access to Digital and Global Marketplace</h4>
+                                                </div>
+                                                <p>MHS offers seamless access to a digital and global marketplace through our sustainable platform. We empower traders to expand their reach and explore new markets with ease and confidence.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Card 4 -->
+                                        <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                            <div class="card h-100" style="background-color: white; color: #150c1a; border: none; border-radius: 10px; padding: 20px;">
+                                                <div class="text-center mb-3">
+                                                    <i class="fa fa-exchange fa-3x" aria-hidden="true" style="color: #2ecc71;"></i>
+                                                    <h4 style="font-weight: 800; letter-spacing: 2px;">Supply Chain Streamlining</h4>
+                                                </div>
+                                                <p>We offer end-to-end solutions that streamline supply chains from cleaning, packaging, and branding, to white labeling for supermarkets, warehousing, and logistics. Our approach ensures that your products reach the market with maximum efficiency.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Card 5 -->
+                                        <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                                            <div class="card h-100" style="background-color: white; color: #150c1a; border: none; border-radius: 10px; padding: 20px;">
+                                                <div class="text-center mb-3">
+                                                    <i class="fa fa-credit-card fa-3x" aria-hidden="true" style="color: #9b59b6;"></i>
+                                                    <h4 style="font-weight: 800; letter-spacing: 2px;">Escrow and Open Account Trade Services</h4>
+                                                </div>
+                                                <p>Our escrow and open account trade services are designed to provide secure and reliable transaction solutions. We ensure that every trade is executed smoothly, with full transparency and trust.</p>
+                                            </div>
+                                        </div>
+                                        <!-- Add more cards as needed -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <div class="container">
+                        <h1 class="wow fadeInUp animated"
+                            style="color: #150c1a; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;text-align: center;"
+                            data-wow-duration="1.0s">
+                            Our Expertise
+                        </h1>
+                    </div>
+
+                    <section>
+                        <div class="container">
+
+
+                            <div class="row">
+                                <div class="carousel-container container-fluid">
+                                    <div class="carousel-wrapper">
+                                        <br>
+                                        <div class="carousel">
+                                            <div class="card">
+                                                <div class="card-header mb-5">Expertise</div>
+                                                <div class="card-body">
+                                                    Our expertise is centered on leveraging AI and advanced data
+                                                    analytics
+                                                    to optimize supply chain efficiency and market performance. We drive
+                                                    innovation by integrating cutting-edge technology with deep industry
+                                                    knowledge, ensuring our clients achieve precision, scalability, and
+                                                    sustainable growth in a competitive landscape.
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">A Lasting Partnership</div>
+                                                <div class="card-body">
+                                                    We build lasting partnerships through a foundation of trust,
+                                                    collaboration, and mutual success. Our commitment to your long-term
+                                                    growth means we’re with you every step of the way, providing
+                                                    tailored
+                                                    support and strategic insights that align with your goals, ensuring
+                                                    enduring success in a rapidly changing market.
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header">Enriched Knowledge Base</div>
+                                                <div class="card-body">
+                                                    Our enriched knowledge base combines deep industry insights with
+                                                    advanced analytics to empower our partners. By staying at the
+                                                    forefront
+                                                    of market trends and technological advancements, we equip you with
+                                                    the
+                                                    tools and strategies needed to navigate challenges, seize
+                                                    opportunities,
+                                                    and excel in an ever-evolving global marketplace.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-controls">
+                                            <br>
+                                            <span class="prev"
+                                                style="position: absolute; bottom: 20px; left: 20px; background-color: #301934; color: white; border-radius: 50%; padding: 10px; cursor: pointer;">&#10094;</span>
+                                            <span class="next"
+                                                style="position: absolute; bottom: 20px; right: 20px; background-color: #301934; color: white; border-radius: 50%; padding: 10px; cursor: pointer;">&#10095;</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+
+                    <section>
+                        <div section-scroll='3' class="wd_scroll_wrap">
+                            <section class="projects bg-img pd-t100 pd-b70 jarallax" style="background-color: #e1e1e1;">
+                                <div class="container">
+                                    <section>
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Solutions and Embedded Trade Section -->
+                                                <div class="row " style="background-color: #e1e1e1;">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <p class="wow fadeInUp animated"
+                                                            style="color: ; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;"
+                                                            data-wow-duration="1.0s">We solve the following challenges
+                                                            by leveraging
+                                                            data
+                                                            and deploying AI
+                                                            and Machine Learning along supply chains:
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <!-- Solutions List -->
+                                                 <div class="contaner">
+                                                <div class="row" style="background-color: #e1e1e1;">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="solutions-container">
+                                                            <div class="solution-item">
+                                                                <div class="solution-step">01</div>
+                                                                <p class="card">
+                                                                    <strong style="font-weight: 800;">Customer Value
+                                                                        Optimization</strong>
+                                                                    <span>We assist in evaluating the ongoing
+                                                                        effectiveness and value of
+                                                                        your lending products.</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="solution-item">
+                                                                <div class="solution-step">02</div>
+                                                                <p class="card">
+                                                                    <strong style="font-weight: 800;">Technical
+                                                                        Assistance</strong>
+                                                                    <span>We provide support for troubleshooting and any
+                                                                        technical issues
+                                                                        you may encounter.</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="solution-item">
+                                                                <div class="solution-step">03</div>
+                                                                <p class="card">
+                                                                    <strong style="font-weight: 800;">Customer
+                                                                        Support</strong>
+                                                                    <span>We offer continuous support through the
+                                                                        product’s Customer Care
+                                                                        Interface.</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="solution-item">
+                                                                <div class="solution-step">04</div>
+                                                                <p class="card">
+                                                                    <strong style="font-weight: 800;">Comprehensive
+                                                                        Value-Added Services</strong>
+                                                                    <span>We go beyond being a mere lending partner by
+                                                                        offering extensive
+                                                                        aftercare and supplementary services.</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="solution-item">
+                                                                <div class="solution-step">05</div>
+                                                                <p class="card">
+                                                                    <strong style="font-weight: 800;">Data and Model
+                                                                        Security</strong>
+                                                                    <span>We consistently evaluate security risks
+                                                                        throughout the machine
+                                                                        learning model lifecycle, addressing concerns
+                                                                        such as data
+                                                                        confidentiality, transfer learning attacks,
+                                                                        system manipulation,
+                                                                        data poisoning, and adversarial examples</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="solution-item">
+                                                                <div class="solution-step">06</div>
+                                                                <p class="card">
+                                                                    <strong style="font-weight: 800;">EReporting and Dashboards</strong>
+                                                                    <span>We help you develop insights and generate detailed reports
+                                                                        through comprehensive dashboards.</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </section>
+
+                                </div>
+                            </section>
+
+                    </section>
+
+                    <section>
+                        <!-- Embedded Trade Section -->
+                        <div section-scroll='3' class="wd_scroll_wrap">
+                            <section class="projects bg-img pd-t100 pd-b70 jarallax" style="background-color: #e1e1e1;">
+                                <div class="container">
+
+                                    <!-- Embedded Trade Section -->
+                                    <div class="row" style="background-color: #e1e1e1;">
+                                        <div class="col-lg-12 col-md-12">
+                                            <h1 class="wow fadeInUp animated"
+                                                style="color: #150c1a; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;"
+                                                data-wow-duration="1.0s">Why work with Mamlaka</h1>
+                                            <br><br>
+                                        </div>
+                                    </div>
+
+                                    <!-- Specialized Services (Row 1) -->
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-6" style="background-color: #;">
+                                            <div class="project-list wow fadeInUp animated" data-wow-duration="1.0s">
+                                                <div class="content" style="height: 370px;">
+                                                    <span class="icons"><img src="images/icons/6.png" alt=""
+                                                            style="width: 50px;" /></span>
+                                                    <h4 class="text-white">Embedded Trade <br> Finance</h4>
+                                                    <p class="text-white">Linking trade parties within the value chain,
+                                                        easing
+                                                        upfront burdens with
+                                                        end-to-end supply chain finance.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-6">
+                                            <div class="project-list wow fadeInUp animated" data-wow-duration="1.3s">
+                                                <div class="content" style="height: 370px;">
+                                                    <span class="icons"><img src="images/icons/7.png" alt=""
+                                                            style="width: 50px;" /></span>
+                                                    <h4 class="text-white">Advanced Technology</h4>
+                                                    <p class="text-white">Leveraging AI, ML, Blockchain, and smart
+                                                        contracts to
+                                                        ensure secure
+                                                        transactions and transparency.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-6">
+                                            <div class="project-list wow fadeInUp animated" data-wow-duration="1.6s">
+                                                <div class="content" style="height: 370px;">
+                                                    <span class="icons"><img src="images/icons/8.png" alt=""
+                                                            style="width: 50px;" /></span>
+                                                    <h4 class="text-white">Payment Channels</h4>
+                                                    <p class="text-white">Providing Mobile Money, agency banking, and
+                                                        escrow
+                                                        services for secure,
+                                                        reliable payments.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-6">
+                                            <div class="project-list wow fadeInUp animated" data-wow-duration="1.9s">
+                                                <div class="content" style="height: 370px;">
+                                                    <span class="icons"><img src="images/icons/9.png" alt=""
+                                                            style="width: 50px;" /></span>
+                                                    <h4 class="text-white">B2B Commodity <br> Marketplace</h4>
+                                                    <p class="text-white">Offering services from farm-to-market access
+                                                        to cleaning,
+                                                        packaging, and
+                                                        warehousing.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+
+
+
+                    <section style="margin-bottom: 50px;">
+
+                    </section>
+
+
+                    <footer style="background-color: #e1e1e1; color: #150c1a; padding: 40px 20px;">
+                        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                            <div class="row">
+                                <!-- Subscribe Section -->
+                                <div class="col-lg-4 col-md-12 mb-4">
+                                    <h4 style="color: #150c1a; margin-bottom: 20px;">Subscribe to Our Newsletter</h4>
+                                    <div class="card p-3" id="subscribe-message"
+                                        style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;">
+                                    </div>
+                                    <br>
+                                    <form id="subscribe-form"
+                                        action="https://owilly.pythonanywhere.com/api/blog/subscriptions/create/"
+                                        method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                                        <input type="email" name="email" placeholder="Enter your email" required
+                                            style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none; background-color: #301934; color: #ffffff;">
+                                        <button type="submit"
+                                            style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                                    </form>
+                                </div>
+
+                                <!-- Contact Us Section -->
+                                <div class="col-lg-4 col-md-12 mb-4">
+                                    <h4 style="color: #150c1a; margin-bottom: 20px;">Contact Us</h4>
+                                    <div id="contact-message" class="card p-3"
+                                        style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;">
+                                    </div>
+                                    <br>
+                                    <form id="contact-form"
+                                        action="https://owilly.pythonanywhere.com/api/blog/contact-us/create/"
+                                        method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                                        <input type="text" name="name" placeholder="Your Name" required
+                                            style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;">
+                                        <input type="email" name="email" placeholder="Your Email" required
+                                            style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: 2px solid #301934;background-color: #301934;color: #ffffff;">
+                                        <textarea name="message" placeholder="Your Message" rows="4" required
+                                            style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;"></textarea>
+                                        <button type="submit"
+                                            style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;width: 150px;align-items: right;">Send
+                                            Message</button>
+                                    </form>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 style="color: #150c1a; margin-bottom: 20px;">Loction and Address</h4>
+
+                                    <div class=" wow  fadeIn animated" data-wow-duration="1.5s"
+                                        style="background-color: transparent;color: #150c1a;">
+                                        <div class="team2-are btc_right_contt"
+                                            style="background-color: transparent;color: #150c1a;">
+                                            <div class="team-list"
+                                                style="background-color: transparent;color: #150c1a;">
+                                                <div class="btc_cot_list_main_wrapper"
+                                                    style="background-color: transparent;color: #150c1a;">
+                                                    <div class="btc_cott_list_inner_wrapper"
+                                                        style="background-color: transparent;color: #150c1a;">
+                                                        <div class="btc_contt_icon_wrapper"
+                                                            style="background-color: transparent;color: #150c1a;">
+                                                            <i class="fa fa-map-marker"></i>
+                                                        </div>
+                                                        <div class="btc_contt_icon_cont_wrapper"
+                                                            style="background-color: transparent;color: #150c1a;">
+                                                            <p style="color: #150c1a;">Wu-Yi Plaza, Galana Road,
+                                                                Kilimani, Nairobi,
+                                                                Kenya.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2">
+                                                        <div class="btc_contt_icon_wrapper" style="color: #150c1a;">
+                                                            <i class="fa fa-phone" style="color: #150c1a;"></i>
+                                                        </div>
+                                                        <div class="btc_contt_icon_cont_wrapper"
+                                                            style="color: #150c1a;">
+                                                            <p style="color: #150c1a;">+254 103 102 336</p>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2">
+                                                        <div class="btc_contt_icon_wrapper">
+                                                            <i class="fa fa-envelope" style="color: #150c1a;"></i>
+                                                        </div>
+                                                        <div class="btc_contt_icon_cont_wrapper">
+                                                            <p><a style="color: #150c1a;"
+                                                                    href="mailto:hello@mam-laka.com">hello@mam-laka.com</a>
+                                                            </p>
+                                                            <p style="color: #150c1a;">Monday - Friday 08:00 - 18:00</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <footer class="foo-bot" style="background-color: #150c1a;">
+                        <div class="footer-bottom">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="copyright wow fadeInUp animated" data-wow-duration="1.9s"
+                                            style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                                            <p style="text-transform: capitalize;">© Copyright Mam-laka Hub & Spoke.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="fadeInUp animated icon-container"
+                                            style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp; display: flex; justify-content: center; align-items: center; gap: 10px;">
+
+                                            <a href="https://ke.linkedin.com/company/mamlaka-hub-and-spoke">
+                                                <div class="icon-wrapper">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                                        class="hover-icon">
+                                                        <path
+                                                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.72 0 54.36A53.79 53.79 0 01107.57 0C137.27 0 160 24.38 160 53.74c0 29.36-22.73 54.36-53.79 54.36zm394.51 339.9h-92.81V302.4c0-34.7-13.45-58.42-46.94-58.42-25.59 0-40.82 17.22-47.55 33.82-2.45 5.98-3.08 14.38-3.08 22.77v147.4H166.41s1.24-239.31 0-264.1h92.82v37.43c-1.2 1.94-2.86 3.82-4.01 5.74h4.01V184.7c12.35-19.06 34.4-46.29 83.54-46.29 60.95 0 106.59 39.83 106.59 125.39v184.2z">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                            </a>
+
+                                            <a href="https://x.com/TheAbojani">
+                                                <div class="icon-wrapper">
+                                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                                                        class="hover-icon">
+                                                        <path
+                                                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                            <a href="https://web.facebook.com/profile.php?id=61550738654440">
+                                                <div class="icon-wrapper">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                                                        class="hover-icon">
+                                                        <path
+                                                            d="M279.14 288l14.22-92.66h-88.91V142.18c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S257.26 0 225.36 0C141.09 0 89.47 54.02 89.47 144.97v50.37H0v92.66h89.47V512h107.1V288z">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="foo-link wow fadeInUp animated" data-wow-duration="1.0s"
+                                            style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                                            <ul style="list-style: none; padding: 0;">
+                                                <li><a style="text-transform: capitalize;"
+                                                        href="terms_and_coditions.html" style="color: #e1e1e1;">Terms of
+                                                        Use</a></li>
+                                                <li><a style="text-transform: capitalize;" href="privacy_policy.html"
+                                                        style="color: #e1e1e1;">Privacy Policy</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                </div>
+                <!--Footer area end here-->
+                <!-- all js here -->
+                <!-- jquery latest version -->
+                <script src="js/vendor/jquery-3.2.1.min.js"></script>
+                <!-- tether js -->
+                <script src="js/tether.min.js"></script>
+                <!-- bootstrap js -->
+                <script src="js/bootstrap.min.js"></script>
+                <!-- owl.carousel js -->
+                <script src="js/owl.carousel.min.js"></script>
+                <!-- meanmenu js -->
+                <script src="js/jquery.meanmenu.js"></script>
+                <!-- jquery-ui js -->
+                <script src="js/jquery-ui.min.js"></script>
+                <!-- easypiechart js -->
+                <script src="js/jquery.easypiechart.min.js"></script>
+                <!-- particles js -->
+                <!-- wow js -->
+                <script src="js/wow.min.js"></script>
+                <!-- smooth-scroll js -->
+                <script src="js/smooth-scroll.min.js"></script>
+                <!-- plugins js -->
+                <script src="js/plugins.js"></script>
+                <!-- EChartJS JavaScript -->
+                <script src="js/echarts-en.min.js"></script>
+                <script src="js/echarts-liquidfill.min.js"></script>
+                <script src="js/vc_round_chart.min.js"></script>
+                <script src="js/videojs-ie8.min.js"></script>
+                <script src="js/video.js"></script>
+                <script src="js/Youtube.min.js"></script>
+                <!-- main js -->
+                <script src="js/main.js"></script>
+
+                <script>
+                    // Function to handle form submission
+                    function handleFormSubmission(formId, messageDivId, successMessage, errorMessage) {
+                        document.getElementById(formId).addEventListener('submit', function (e) {
+                            e.preventDefault(); // Prevent default form submission
+                            const form = e.target;
+                            const formData = new FormData(form);
+                            const messageDiv = document.getElementById(messageDivId);
+
+                            fetch(form.action, {
+                                method: 'POST',
+                                body: JSON.stringify(Object.fromEntries(formData)),
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    // Display message from backend or custom success message
+                                    if (data.status === 'success') {
+                                        messageDiv.textContent = successMessage;
+                                        messageDiv.style.color = 'green';
+                                    } else {
+                                        messageDiv.textContent = data.message || errorMessage;
+                                        messageDiv.style.color = 'red';
+                                    }
+                                    messageDiv.style.display = 'block';
+                                    form.reset(); // Clear the form
+                                })
+                                .catch(() => {
+                                    // Display generic error message
+                                    messageDiv.textContent = errorMessage;
+                                    messageDiv.style.color = 'red';
+                                    messageDiv.style.display = 'block';
+                                });
+                        });
+                    }
+
+                    // Handle subscription form submission
+                    handleFormSubmission(
+                        'subscribe-form',
+                        'subscribe-message',
+                        'Subscription successful! Thank you for subscribing.',
+                        'There was an error subscribing. Please try again.'
+                    );
+
+                    // Handle contact form submission
+                    handleFormSubmission(
+                        'contact-form',
+                        'contact-message',
+                        'Message sent successfully! We will get back to you soon.',
+                        'There was an error sending your message. Please try again.'
+                    );
+                </script>
+
+
+                <!-- carousel -->
+
+                <script>
+                    const carousel = document.querySelector('.carousel');
+                    const prevButton = document.querySelector('.prev');
+                    const nextButton = document.querySelector('.next');
+
+                    let currentIndex = 0;
+
+                    function updateCarousel() {
+                        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    }
+
+                    prevButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex > 0) ? currentIndex - 1 : carousel.children.length - 1;
+                        updateCarousel();
+                    });
+
+                    nextButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex < carousel.children.length - 1) ? currentIndex + 1 : 0;
+                        updateCarousel();
+                    });
+
+                </script>
+
+
+    </body>
+
+</html>

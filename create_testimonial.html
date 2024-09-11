@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Testimonial</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        label { display: block; margin-top: 10px; }
+        input, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; }
+        button { margin-top: 15px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Submit a Testimonial</h1>
+    <form id="testimonial-form" enctype="multipart/form-data">
+        <label for="client_name">Name:</label>
+        <input type="text" id="client_name" name="client_name" required>
+
+        <label for="client_text">Your Testimonial:</label>
+        <textarea id="client_text" name="client_text" rows="5" required></textarea>
+
+        <label for="profile_image">Profile Image URL:</label>
+        <input type="file" id="profile_image" name="profile_image">
+
+        <button type="submit">Submit Testimonial</button>
+    </form>
+
+    <script>
+        document.getElementById('testimonial-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            const formData = new FormData();
+            formData.append('user', 1); // Replace 1 with the actual logged-in user's ID.
+            formData.append('client_name', document.getElementById('client_name').value);
+            formData.append('client_text', document.getElementById('client_text').value);
+    
+            const profileImageInput = document.getElementById('profile_image');
+            if (profileImageInput.files.length > 0) {
+                formData.append('profile_image', profileImageInput.files[0]);
+            }
+    
+            fetch('https://owilly.pythonanywhere.com/api/blog/testimonials/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const responseDiv = document.getElementById('response-message');
+                if (data.user) {
+                    responseDiv.textContent = 'Thank you for your testimonial!';
+                    responseDiv.style.color = 'green';
+                    this.reset();
+                } else {
+                    responseDiv.textContent = data.profile_image || data.user || 'Failed to submit testimonial. Please try again later.';
+                    responseDiv.style.color = 'red';
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting testimonial:', error);
+                document.getElementById('response-message').textContent = 'Failed to submit testimonial. Please try again later.';
+                document.getElementById('response-message').style.color = 'red';
+            });
+        });
+    </script></body>
+</html>

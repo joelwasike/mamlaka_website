@@ -1,0 +1,707 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Mamlaka Hub & Spoke</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="logo.jpeg">
+
+    <!-- BOOTSTRAP -->
+
+    <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- end bootstrap -->
+
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- bxslider css -->
+    <!--flaticon css -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/video-js.css" rel="stylesheet">
+
+    
+    <!-- style css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+.icon-wrapper {
+    display: inline-block;
+}
+
+.hover-icon {
+    fill: #e1e1e1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+    padding: 8px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hover-icon:hover {
+    background-color: #150c1a;
+    cursor: pointer;
+    transform: rotate(15deg);
+}
+
+
+#partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow: hidden;
+    max-height: 200px; /* Adjust based on your layout */
+    transition: max-height 0.3s ease;
+}
+
+#partner-list.expanded {
+    max-height: none;
+}
+
+.show-more {
+    background: transparent;
+    border: none;
+    color: #007bff; /* Adjust based on your design */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.show-more i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.show-more.rotate i {
+    transform: rotate(180deg);
+}
+
+    </style>
+    <style>
+        .network-area {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.network-details {
+    position: relative;
+    padding: 50px 0;
+}
+
+.network-heading h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.network-flow {
+    position: relative;
+    margin-top: 30px;
+}
+
+.flow-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.flow-steps .step {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.flow-steps .step-content {
+    width: 45%;
+    text-align: left;
+    background-color: #301934; /* Semi-transparent background */
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+.flow-steps .step.left-step .step-content {
+    margin-left: auto;
+}
+
+.flow-steps .step.right-step .step-content {
+    margin-right: auto;
+}
+
+.flow-steps:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #fff 50%, transparent) repeat-y;
+    background-size: 0 20px;
+    z-index: 1;
+}
+
+.flow-steps .step:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.app-download-buttons {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.app-button img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+.explore-button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #0088cc;
+}
+
+    </style>
+
+<!-- HEADER STYLE -->
+    <style>
+
+/* Navbar styles */
+/* .gc_main_menu_wrapper {
+  background-color: rgb(249, 250, 251);
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-area img {
+  width: 50%;
+}
+
+.menu-area .nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-area .nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu-area .nav a {
+  color: black !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.menu-area .nav a:hover {
+  color: #0056b3;
+} */
+
+/* Dropdown menu */
+.navbar-toggler {
+    z-index: 1050;
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1040;
+    display: none;
+  }
+
+  .navbar-collapse.show + .mobile-overlay {
+    display: block;
+  }
+
+  .navbar-collapse.show {
+    justify-content: flex-end !important; /* Align items to the right */
+  }
+
+  .navbar-toggler:focus, .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-custom {
+    background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+  }
+
+  .btn-custom:hover {
+    background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #5f0f40;
+  }
+
+  .container-fluid.px-4 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .collapse.navbar-collapse {
+    padding-right: 0 !important;
+  }
+
+    </style>
+    <!-- END HEADER STYLE -->
+    <!-- responsive css -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr css -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:" id="return-to-top" style="background-color: #150c1a;"><i class="fa fa-angle-up" ></i></a>
+    <!-- preloader Start -->
+    <!-- <div id="preloader">
+        <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+        </div>
+    </div> -->
+<!-- Header area start here -->
+
+      <!-- responsive css -->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- modernizr css -->
+      <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  
+  <body style="background-color: #e1e1e1;margin: auto !important">
+      <a href="javascript:" id="return-to-top" style="background-color: ;"><i class="fa fa-angle-up" ></i></a>
+      <!-- preloader Start -->
+      <!-- <div id="preloader">
+          <div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
+          </div>    
+      </div> -->
+  <!-- Header area start here -->
+  <div class=" bg-light">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <!-- Logo Area -->
+          <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+            <div class="logo-area">
+              <a href="index.html">
+                <img src="images/logo/logo2.png" alt="logo" class="img-fluid" style="width: 50%;" />
+              </a>
+            </div>
+          </div>
+          <!-- Menu Area -->
+          <div class="col-lg-9 col-md-9 col-sm-8 col-6">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                  style="right: 0 !important;"
+                  >
+                  <span class="menu-text" style="font-size: 1rem;">&nbsp;  Menu</span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto" style="right: 0 !important;">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="solutions.html">Solutions</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Resources</a>
+                      <div class="dropdown-menu" aria-labelledby="resourcesDropdown">
+                        <a class="dropdown-item" href="blogs.html">Blogs & Events</a>
+                        <a class="dropdown-item" href="testimonials.html">Testimonials</a>
+                        <a class="dropdown-item" href="partners.html">Partners</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Company</a>
+                      <div class="dropdown-menu" aria-labelledby="companyDropdown">
+                        <a class="dropdown-item" href="about.html">About Us</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="network.html">Network</a>
+                    </li>
+                  </ul>
+                </div>
+                <br>
+                <li class="nav-item" style="list-style-type: none;">
+                  <a href="contact.html" class="text-info" style="bottom: 0 !important; ">
+                    <i class="fa fa-user" style="margin-top: 20px;"></i><span> Contact Us</span>
+                  </a>
+                </li>
+              </nav>
+            </div>
+
+        </div>
+      </div>
+  </div>
+        <!--Header area end here-->
+        <div class="container mt-5" style="margin: ;width: 80%;background-color: #e1e1e1;">
+
+        <h1>TERMS AND CONDITIONS</h1> 
+
+        <h2> 1. SCOPE OF AGREEMENT</h2>
+        <p>
+        <h5> 1.1.</h5> These terms and conditions constitute a legally binding agreement (the “Agreement”) made between you,
+            whether personally or on behalf of an entity (“you” and “User”) and Mamlaka Hub & Spoke Ltd. (“MHS”, “we”,
+            “us”, or “our”) and govern all use of the https://mam-laka.com website (the “Site”). Unless otherwise
+            subject to a separate written agreement with MHS, these terms will also govern the use of the products and
+            services available at the Site (collectively referred to as the “Service”). The Service is owned and
+            operated by MHS and is offered subject to your acceptance without modification of all terms and conditions
+            contained herein and all other operating rules, policies, and procedures that may be published from time to
+            time on the Site by MHS.
+        </p>
+           <h5> 1.2.</h5> <p>YOU AGREE THAT BY ACCESSING THE SITE, YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY ALL OF THESE
+            TERMS AND CONDITIONS OF THE AGREEMENT. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS AND CONDITIONS, THEN YOU
+            ARE EXPRESSLY PROHIBITED FROM USING THE SITE, AND YOU MUST DISCONTINUE USE IMMEDIATELY. IF YOU ARE UNDER
+            EIGHTEEN (18) YEARS OF AGE, YOU MAY NOT USE THE SERVICE.
+        </p> 
+            <h5> 1.3.</h5>. <p> Supplemental terms and conditions or documents that may be posted on the Site from time to time are
+            hereby expressly incorporated herein by reference. MHS reserves the right, at its sole discretion, to modify
+            or replace any of the terms or conditions of this Agreement at any time. It is the User’s responsibility to
+            check this Agreement periodically for changes. The User’s continued use of the Service following the posting
+            of any changes to this Agreement constitutes acceptance of those changes.
+        </p>
+            <h5> 1.4.</h5>. <p> The information provided on the Site is not intended for distribution to or use by any person or entity
+            in any jurisdiction or country where such distribution or use would be contrary to applicable law or
+            regulation or would subject us to any registration requirement within such jurisdiction or country.
+            Accordingly, those persons who choose to access the Site from other locations do so on their own initiative
+            and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.
+        </p>
+            <h2>2. MHS</h2>
+
+           <h5>2.1.</h5> <p>  Mamlaka Hub & Spoke Ltd. is a private company incorporated in Kenya and regulated by the Central Bank
+            of Kenya in accordance with authorization certificate no. NPS/29/31/2023. MHS is authorized to provide
+            payment initiation services as a payment gateway and aggregator in the Republic of Kenya.
+        </p>
+           <h5> 2.2.</h5> <p>MHS processes Payment Transactions on behalf of Sellers. MHS is not a bank or other chartered
+            depository institution.
+        </p> 
+           <h2>3. USING THE SERVICE</h2> 
+           <h5>3.1.</h5> <p>  The User does not need to register for an MHS account to use the Service and visit most areas of the
+            Site. However, to access restricted areas of the Site, the User will need to register and set up an account
+            with MHS (the “Account”).
+        </p>
+        <h5>  3.2. </h5> <p>The User is solely responsible for the Account, the maintenance, confidentiality, and security of the
+            Account, and all passwords related to your Account, including all activities of any persons who gain access
+            to the Account with or without the User’s permission.
+        </p> 
+           <h5>< 3.3./h5></3.3.> <p> The User agrees to immediately notify MHS if they become aware of any unauthorized use of the Account,
+            any Service provided through the Account, any password related to the Account, or any other breach of
+            security with respect to the Account. The User agrees to provide assistance to MHS, as requested, to stop or
+            remedy any breach of security related to the Account.
+        </p>
+            <h5> 3.4. </h5> <p>The verification documents provided to MHS must be uploaded by the User into the MHS system using the
+            relevant function of the Site. If scanned copies of the documents do not pass the technical screening, the
+            transaction will be refused, and the User will be denied use of the Service.
+        </p> 
+            <h5>3.5.</h5> <p> MHS retains the right to request additional documents and/or information regarding the User or
+            transactions at any time. MHS will decide, in its sole discretion, whether the documents and/or information
+            provided are sufficient to allow the User to use the Service or any part thereof. MHS may request an update
+            and/or confirmation of any information and documentation as frequently as needed to follow internal policies
+            and comply with the Acting Law of the Central Bank of Kenya and international regulations.
+        </p>
+        </div>
+        <!--Footer area start here-->
+  <!--Footer area start here-->
+  <footer style="background-color: #e1e1e1; color: #150c1a; padding: 40px 20px;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <div class="row">
+            <!-- Subscribe Section -->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <h4 style="color: #150c1a; margin-bottom: 20px;">Subscribe to Our Newsletter</h4>
+                <div class="card p-3" id="subscribe-message" style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;"></div>
+                <br>
+                <form id="subscribe-form" action="https://owilly.pythonanywhere.com/api/blog/subscriptions/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                    <input type="email" name="email" placeholder="Enter your email" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none; background-color: #301934; color: #ffffff;">
+                    <button type="submit" style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Contact Us Section -->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <h4 style="color: #150c1a; margin-bottom: 20px;">Contact Us</h4>
+                <div id="contact-message" class="card p-3" style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;"></div>
+                <br>
+                <form id="contact-form" action="https://owilly.pythonanywhere.com/api/blog/contact-us/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                    <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;">
+                    <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: 2px solid #301934;background-color: #301934;color: #ffffff;">
+                    <textarea name="message" placeholder="Your Message" rows="4" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;"></textarea>
+                    <button type="submit" style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;width: 150px;align-items: right;">Send Message</button>
+                </form>
+
+            </div>
+            <div class="col-md-4">
+                <h4 style="color: #150c1a; margin-bottom: 20px;">Loction and Address</h4>
+
+                <div class=" wow  fadeIn animated"
+                data-wow-duration="1.5s"
+                style="background-color: transparent;color: #150c1a;">
+                <div class="team2-are btc_right_contt"
+                    style="background-color: transparent;color: #150c1a;">
+                    <div class="team-list"
+                        style="background-color: transparent;color: #150c1a;">
+                        <div class="btc_cot_list_main_wrapper"
+                            style="background-color: transparent;color: #150c1a;">
+                            <div class="btc_cott_list_inner_wrapper"
+                                style="background-color: transparent;color: #150c1a;">
+                                <div class="btc_contt_icon_wrapper"
+                                    style="background-color: transparent;color: #150c1a;">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div class="btc_contt_icon_cont_wrapper"
+                                    style="background-color: transparent;color: #150c1a;">
+                                    <p style="color: #150c1a;">Wu-Yi Plaza, Galana Road, Kilimani, Nairobi,
+                                        Kenya.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2" >
+                                <div class="btc_contt_icon_wrapper" style="color: #150c1a;">
+                                    <i class="fa fa-phone" style="color: #150c1a;"></i>
+                                </div>
+                                <div class="btc_contt_icon_cont_wrapper" style="color: #150c1a;">
+                                    <p style="color: #150c1a;">+254 103 102 336</p>
+                                </div>
+                            </div>
+                            <div
+                                class="btc_contt_list_inner_wrapper btc_contt_list_inner_wrapper2">
+                                <div class="btc_contt_icon_wrapper">
+                                    <i class="fa fa-envelope" style="color: #150c1a;"></i>
+                                </div>
+                                <div class="btc_contt_icon_cont_wrapper">
+                                    <p ><a style="color: #150c1a;"
+                                            href="mailto:hello@mam-laka.com">hello@mam-laka.com</a>
+                                    </p>
+                                    <p style="color: #150c1a;">Monday - Friday 08:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="foo-bot" style="background-color: #150c1a;">
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="copyright wow  fadeInUp animated" data-wow-duration="1.9s"
+                        style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                        <p>© Copyright Mam-laka Hub & Spoke. <a
+                                style="text-transform: capitalize;color: #10122d;"
+                                href="https://www.centralbank.go.ke">
+                        </p>
+                        
+                    </div>
+
+                    
+                </div>
+               
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="foo-link wow  fadeInUp animated" data-wow-duration="1.0s"
+                        style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
+                        <ul>
+                            <li><a href="terms_and_coditions.html">Terms of Use</a></li>
+                            <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<!--Footer area end here-->
+<!-- all js here -->
+<!-- jquery latest version -->
+<script src="js/vendor/jquery-3.2.1.min.js"></script>
+<!-- tether js -->
+<script src="js/tether.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- owl.carousel js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- meanmenu js -->
+<script src="js/jquery.meanmenu.js"></script>
+<!-- jquery-ui js -->
+<script src="js/jquery-ui.min.js"></script>
+<!-- easypiechart js -->
+<script src="js/jquery.easypiechart.min.js"></script>
+<!-- particles js -->
+<!-- wow js -->
+<script src="js/wow.min.js"></script>
+<!-- smooth-scroll js -->
+<script src="js/smooth-scroll.min.js"></script>
+<!-- plugins js -->
+<script src="js/plugins.js"></script>
+<!-- EChartJS JavaScript -->
+<script src="js/echarts-en.min.js"></script>
+<script src="js/echarts-liquidfill.min.js"></script>
+<script src="js/vc_round_chart.min.js"></script>
+<script src="js/videojs-ie8.min.js"></script>
+<script src="js/video.js"></script>
+<script src="js/Youtube.min.js"></script>
+<!-- main js -->
+<script src="js/main.js"></script>
+
+<!-- testimonials -->
+<script>
+    // Function to handle form submission
+    function handleFormSubmission(formId, messageDivId, successMessage, errorMessage) {
+        document.getElementById(formId).addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            const form = e.target;
+            const formData = new FormData(form);
+            const messageDiv = document.getElementById(messageDivId);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display message from backend or custom success message
+                if (data.status === 'success') {
+                    messageDiv.textContent = successMessage;
+                    messageDiv.style.color = 'green';
+                } else {
+                    messageDiv.textContent = data.message || errorMessage;
+                    messageDiv.style.color = 'red';
+                }
+                messageDiv.style.display = 'block';
+                form.reset(); // Clear the form
+            })
+            .catch(() => {
+                // Display generic error message
+                messageDiv.textContent = errorMessage;
+                messageDiv.style.color = 'red';
+                messageDiv.style.display = 'block';
+            });
+        });
+    }
+
+    // Handle subscription form submission
+    handleFormSubmission(
+        'subscribe-form', 
+        'subscribe-message', 
+        'Subscription successful! Thank you for subscribing.', 
+        'There was an error subscribing. Please try again.'
+    );
+
+    // Handle contact form submission
+    handleFormSubmission(
+        'contact-form', 
+        'contact-message', 
+        'Message sent successfully! We will get back to you soon.', 
+        'There was an error sending your message. Please try again.'
+    );
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const showMoreButton = document.getElementById('show-more');
+const partnerList = document.getElementById('partner-list');
+
+showMoreButton.addEventListener('click', function () {
+    partnerList.classList.toggle('expanded');
+    showMoreButton.classList.toggle('rotate');
+
+    if (partnerList.classList.contains('expanded')) {
+        showMoreButton.innerHTML = 'Show Less <i class="fa fa-chevron-up"></i>';
+    } else {
+        showMoreButton.innerHTML = 'Show More <i class="fa fa-chevron-down"></i>';
+    }
+});
+});
+</script>
+
+
+
+
+
+<!-- <script>
+document.addEventListener('DOMContentLoaded', function() {
+const slides = document.querySelector('.slides');
+const slideCount = document.querySelectorAll('.slide').length;
+let currentIndex = 1;
+
+function slide() {
+currentIndex = (currentIndex + 1) % slideCount;
+slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+setInterval(slide, 1000); // Change slide every 5 seconds
+});
+
+</script> -->
+
+</body>
+
+</html>
